@@ -290,7 +290,7 @@ const curriculumData = {
                 degree: 'Master of Education (M.Ed. 2 Years)',
                 duration: '2 Years (4 Semesters)',
                 overview: 'Aims to elevate primary school teachers by producing breakthrough hands-on learning innovations, active classroom research, and progressive child mentoring tools.',
-                career: ['Expert Primary School Teacher / Grade Level Head', 'Consultant in child learning and innovative class tactics', 'Primary curriculum publisher and syllabus consultant', 'Researcher in elementary education models']
+                career: ['Expert Primary School Teacher / Grade Level Head', 'Consultant in child learning and innovative class tactics', 'Primary curriculum publisher and syllabus consultant', 'Researcher in elementary education model']
             }
         }
     ],
@@ -364,7 +364,7 @@ function openProgModal(level, id) {
     data.career.forEach(item => {
         const li = document.createElement('li');
         li.className = 'flex items-start';
-        li.innerHTML = `<i class="fa-solid fa-check text-npu-gold-500 mr-2.5 mt-1 flex-shrink-0"></i> <span>${item}</span>`;
+        li.innerHTML = `<i class="fa-solid fa-check text-artistic-emerald mr-2.5 mt-1 flex-shrink-0"></i> <span>${item}</span>`;
         pmCareer.appendChild(li);
     });
 
@@ -413,14 +413,13 @@ function switchTab(tabId) {
     const tabs = ['bachelor', 'master', 'doctoral'];
     tabs.forEach(t => {
         const btn = document.getElementById(`tab-btn-${t}`);
-        const content = document.getElementById(`tab-content-${t}`);
         
         if (t === tabId) {
-            btn.className = 'w-full sm:w-auto px-6 py-3 font-prompt font-bold text-sm rounded-xl transition duration-300 bg-npu-blue-900 dark:bg-npu-gold-600 text-white dark:text-slate-950 shadow-md';
-            content.classList.remove('hidden');
+            btn.className = 'w-full sm:w-auto px-6 py-2.5 font-prompt font-bold text-xs rounded-full transition duration-300 bg-ink-theme text-white dark:bg-artistic-yellow dark:text-slate-950 shadow-sm';
+            document.getElementById(`tab-content-${t}`).classList.remove('hidden');
         } else {
-            btn.className = 'w-full sm:w-auto px-6 py-3 font-prompt font-bold text-sm rounded-xl transition duration-300 text-slate-600 dark:text-slate-400 hover:bg-slate-200/55 dark:hover:bg-slate-800';
-            content.classList.add('hidden');
+            btn.className = 'w-full sm:w-auto px-6 py-2.5 font-prompt font-bold text-xs rounded-full transition duration-300 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800';
+            document.getElementById(`tab-content-${t}`).classList.add('hidden');
         }
     });
     
@@ -438,18 +437,18 @@ function renderTabContent(tabId) {
     list.forEach(program => {
         const data = program[currentLang];
         const card = document.createElement('div');
-        card.className = 'glass-card hover:bg-slate-100/50 dark:hover:bg-slate-800/40 rounded-3xl p-8 shadow-md border border-slate-100 dark:border-slate-800 flex flex-col justify-between transform hover:-translate-y-1.5 transition-all duration-300 group';
+        card.className = 'bg-white dark:bg-slate-900 border border-slate-300/30 dark:border-slate-800 rounded-3xl p-6 shadow-sm flex flex-col justify-between transform hover:-translate-y-1.5 transition duration-300 group';
         
         card.innerHTML = `
             <div>
-                <span class="text-[10px] font-bold text-npu-terracotta-600 dark:text-npu-gold-300 uppercase tracking-widest font-prompt">${data.degree}</span>
-                <h4 class="text-lg font-bold text-slate-950 dark:text-white mt-2 mb-4 group-hover:text-npu-corporate dark:group-hover:text-npu-gold-400 transition font-prompt">${data.title}</h4>
+                <span class="text-[9px] font-bold text-artistic-terracotta uppercase tracking-widest font-prompt">${data.degree}</span>
+                <h4 class="text-base font-bold text-ink-theme dark:text-white mt-1.5 mb-3 group-hover:text-artistic-emerald transition font-prompt leading-snug">${data.title}</h4>
                 <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed mb-6 line-clamp-3">${data.overview}</p>
             </div>
-            <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
-                <span class="text-[10px] font-bold text-slate-400 font-prompt"><i class="fa-regular fa-clock mr-1.5"></i>${data.duration}</span>
-                <button onclick="openProgModal('${tabId}', '${program.id}')" class="text-xs font-bold text-npu-blue-900 dark:text-npu-gold-400 hover:text-npu-terracotta-600 font-prompt flex items-center transition">
-                    <span>${currentLang === 'th' ? 'ดูรายละเอียดหลักสูตร' : 'View Details'}</span>
+            <div class="pt-4 border-t border-slate-300/10 dark:border-slate-800/80 flex justify-between items-center">
+                <span class="text-[9px] font-bold text-slate-400 font-prompt"><i class="fa-regular fa-clock mr-1.5"></i>${data.duration}</span>
+                <button onclick="openProgModal('${tabId}', '${program.id}')" class="text-xs font-bold text-ink-theme dark:text-artistic-yellow hover:text-artistic-emerald font-prompt flex items-center transition">
+                    <span>${currentLang === 'th' ? 'ดูรายละเอียด' : 'Details'}</span>
                     <i class="fa-solid fa-angle-right ml-1"></i>
                 </button>
             </div>
@@ -520,72 +519,9 @@ function calculateFee() {
     totalVal.textContent = total.toLocaleString('th-TH');
 }
 
-// Typing Animated Text Quotes
-const typingQuotes = {
-    th: [
-        "WE EDUCATE THE FUTURE",
-        "ผลิตครูคุณภาพ มุ่งสู่ปัญญาพัฒนาลุ่มน้ำโขง",
-        "ทุ่มเทเพื่อพัฒนาศิษย์ บ่มเพาะจิตวิญญาณความเป็นครู",
-        "สร้างนวัตกรรมวิชาการระดับสากล นำสังคมสู่การพัฒนาที่ยั่งยืน"
-    ],
-    en: [
-        "WE EDUCATE THE FUTURE",
-        "Shaping quality teachers for the Mekong community",
-        "Dedication to nurturing students and pedagogy values",
-        "Innovating global curriculum and sustainable education"
-    ]
-};
-
-let quoteIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeTimeout;
-
-function typeAnimation() {
-    const textElement = document.getElementById('typing-text');
-    if (!textElement) return;
-    
-    const quotes = typingQuotes[currentLang];
-    const currentQuote = quotes[quoteIndex];
-    
-    if (isDeleting) {
-        textElement.textContent = currentQuote.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        textElement.textContent = currentQuote.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    let delay = 100;
-    
-    if (!isDeleting && charIndex === currentQuote.length) {
-        delay = 2500; // Pause at full word
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        quoteIndex = (quoteIndex + 1) % quotes.length;
-        delay = 500; // Pause before next word
-    } else if (isDeleting) {
-        delay = 40; // Deletion speed
-    }
-    
-    typeTimeout = setTimeout(typeAnimation, delay);
-}
-
-// Reset typing animation on language switch
-function resetTyping() {
-    clearTimeout(typeTimeout);
-    quoteIndex = 0;
-    charIndex = 0;
-    isDeleting = false;
-    typeAnimation();
-}
-
 // Stat Counter Up Effect
 function animateStats() {
     const stats = [
-        { id: 'stat-year', end: 2015, duration: 1800 },
-        { id: 'stat-programs', end: 14, duration: 1500 },
         { id: 'stat-students', end: 1200, duration: 2000 },
         { id: 'stat-employment', end: 98, duration: 1600 }
     ];
@@ -627,7 +563,7 @@ function animateStats() {
 }
 
 // Stat Section Observer
-const statsSection = document.getElementById('stat-year')?.closest('div.grid');
+const statsSection = document.getElementById('stat-students')?.closest('div.grid');
 if (statsSection) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -682,51 +618,51 @@ if (backToTopBtn) {
 const langTranslations = {
     th: {
         "site-title": "คณะครุศาสตร์ มหาวิทยาลัยนครพนม | Faculty of Education, Nakhon Phanom University",
-        "nav-brand-uni": "มหาวิทยาลัยนครพนม",
-        "nav-brand-faculty": "คณะครุศาสตร์",
-        "nav-home": "หน้าแรก",
-        "nav-about": "เกี่ยวกับคณะ",
-        "nav-curriculum": "หลักสูตร",
-        "nav-admission": "รับสมัครเรียน",
-        "nav-news": "ข่าวประชาสัมพันธ์",
-        "nav-contact": "ติดต่อเรา",
-        "hero-badge": "ยินดีต้อนรับสู่ คณะครุศาสตร์ มหาวิทยาลัยนครพนม",
-        "hero-subtitle": "\"มุ่งมั่นสู่การเป็นคณะชั้นนำแห่งการเรียนรู้ทางวิชาชีพครูและบุคลากรทางการศึกษาในระดับอนุภูมิภาคลุ่มน้ำโขง บนฐานการเรียนรู้จากการปฏิบัติจริงและการบริการวิชาการ\"",
-        "hero-btn-apply": "สมัครเรียนออนไลน์",
-        "hero-btn-programs": "หลักสูตรที่เปิดสอน",
-        "stat-est": "ปีที่ก่อตั้ง (Established)",
-        "stat-prog": "หลักสูตรรวมที่เปิดสอน",
-        "stat-stud": "นักศึกษาปัจจุบัน",
-        "stat-employ": "อัตราการได้งานทำของบัณฑิต",
-        "about-badge": "ปรัชญาและค่านิยมหลัก",
-        "about-title": "ก้าวไกล สู่อนาคตที่มั่นคง",
-        "vision-title": "วิสัยทัศน์ของคณะครุศาสตร์ (Vision)",
-        "vision-body": "\"คณะครุศาสตร์ มุ่งมั่นสู่การเป็นคณะชั้นนำแห่งการเรียนรู้ทางวิชาชีพครูและบุคลากรทางการศึกษาในระดับอนุภูมิภาคลุ่มน้ำโขง โดยมุ่งเน้นการผลิตบัณฑิตให้มีคุณภาพตามมาตรฐานวิชาชีพ บนฐานการเรียนรู้จากการปฏิบัติจริงและการบริการวิชาการ รวมถึงเป็นผู้มีคุณธรรมและจรรยาบรรณวิชาชีพตามความต้องการของสังคม\"",
-        "mission-title": "พันธกิจหลัก (Missions)",
-        "mission-1": "ผลิตบัณฑิตครูและพัฒนาบุคลากรทางการศึกษาให้มีสมรรถนะวิชาชีพสูง ทันต่อการเปลี่ยนแปลงของสังคม",
-        "mission-2": "วิจัยและพัฒนาองค์ความรู้ นวัตกรรมทางการศึกษาที่สอดคล้องกับความต้องการของท้องถิ่นเชิงพื้นที่",
-        "mission-3": "บริการวิชาการแก่โรงเรียน ชุมชน เพื่อยกระดับและยั่งยืนในการพัฒนาการจัดการศึกษา",
-        "edu-header": "ค่านิยมหลักขององค์กร \"EDU\"",
-        "val-e-title": "Empowerment (พลังปัญญา)",
-        "val-e-body": "การส่งเสริม พัฒนา และเสริมพลังทางปัญญา มอบโอกาสให้นักศึกษาดึงศักยภาพสูงสุดออกมาใช้ในการสร้างสรรค์วิชาการ",
-        "val-d-title": "Dedication (ความมุ่งมั่น)",
-        "val-d-body": "ความทุ่มเท เสียสละ เอาใจใส่ในการทำงานและการเป็นครูผู้ให้การศึกษาด้วยจิตวิญญาณความเป็นครูอย่างจริงจัง",
-        "val-u-title": "Uniqueness (เอกลักษณ์วิชาชีพ)",
-        "val-u-body": "ความโดดเด่น มีเอกลักษณ์เฉพาะตน มีทักษะภาคปฏิบัติที่แม่นยำ และมีความรู้ความเชี่ยวชาญสอดคล้องกับท้องถิ่นลุ่มน้ำโขง",
-        "dean-badge": "สารจากคณบดี",
+        "nav-brand-sig": "EduNPU",
+        "nav-home": "SERVICES",
+        "nav-about": "ABOUT",
+        "nav-curriculum": "CURRICULUMS",
+        "nav-admission": "ADMISSIONS",
+        "nav-news": "NEWS",
+        "nav-contact": "CONTACT",
+        "hero-email": "edu@npu.ac.th",
+        "hero-est-title": "YEARS",
+        "hero-est-sub": "FOUNDED EXPERIENCE",
+        "hero-right-desc": "\"เรามุ่งเน้นการผลิตบัณฑิตครูให้มีคุณภาพตามมาตรฐานวิชาชีพ บนฐานการเรียนรู้จากการปฏิบัติจริง และการบ่มเพาะจิตวิญญาณความเป็นครูเพื่ออนาคตของชุมชนเชิงพื้นที่ลุ่มน้ำโขง\"",
+        "seal-tag1": "NPU CERTIFIED",
+        "seal-tag2": "PROFESSIONAL EDUCATOR",
+        "p1-title": "หลักสูตรปริญญาตรี (B.Ed.)",
+        "p1-sub": "9 สาขาวิชา | หลักสูตรครุศาสตรบัณฑิต 4 ปี",
+        "p2-title": "หลักสูตรปริญญาโท (M.Ed.)",
+        "p2-sub": "3 สาขาวิชา | การบริหารและนวัตกรรม",
+        "p3-title": "หลักสูตรปริญญาเอก (Ph.D. / Ed.D.)",
+        "p3-sub": "2 สาขาวิชา | ระดับวิจัยพัฒนาการศึกษาขั้นสูง",
+        "help-title": "What do we support?",
+        "help-desc": "คณะครุศาสตร์ มหาวิทยาลัยนครพนม มุ่งเน้นการสนับสนุนกระบวนการเรียนรู้และวางโครงสร้างเพื่อการผลิตบุคลากรการสอนที่เก่งกล้าสามารถในศตวรรษที่ 21 เราสนับสนุนเครื่องมือสื่อเทคโนโลยี ห้องปฏิบัติการอัจฉริยะ (Smart Classroom) ระบบประเมินค่าเทอมที่โปร่งใส และการสร้างเครือข่ายครูท้องถิ่นพัฒนาภูมิภาคลุ่มน้ำโขงเชิงประยุกต์ปฏิบัติจริง",
+        "stat-stud-tag": "ACTIVE STUDENTS",
+        "stat-employ-tag": "EMPLOYMENT RATE",
+        "dean-badge": "DEAN'S MESSAGE",
         "dean-header": "\"ผลิตบัณฑิตครูคุณภาพ มุ่งสู่ปัญญาพัฒนาท้องถิ่นลุ่มน้ำโขง\"",
-        "dean-name": "ผู้ช่วยศาสตราจารย์ ดร.เกรียงไกร ผาสุตะ",
-        "dean-role": "คณบดีคณะครุศาสตร์ มหาวิทยาลัยนครพนม",
         "dean-excerpt": "\"ยินดีต้อนรับนักศึกษาและทุกท่านเข้าสู่เว็บไซต์ของคณะครุศาสตร์ มหาวิทยาลัยนครพนม คณะครุศาสตร์แห่งนี้เป็นสถาบันผลิตครูที่มุ่งเน้นการปฏิรูปการศึกษา พัฒนาครูอย่างต่อเนื่องให้เป็นมืออาชีพที่เพียบพร้อมด้วยทักษะวิชาชีพ ความเป็นผู้นำ และคุณธรรมความดีงาม...\"",
-        "dean-btn-read": "อ่านสารจากคณบดีฉบับเต็ม",
-        "curr-badge": "หลักสูตรที่เปิดสอน",
+        "dean-btn-read": "อ่านสารจากคณบดีฉบับเต็ม (Read Full Message)",
+        "time-badge": "ACADEMIC JOURNEY",
+        "time-title": "ประวัติความเป็นมาของคณะ",
+        "time1-role": "จัดตั้งคณะตามมติสภามหาวิทยาลัย",
+        "time1-period": "1 ตุลาคม พ.ศ. 2558",
+        "time1-body": "จัดตั้งขึ้นเพื่อแยกตัวการเรียนการสอนด้านการผลิตครูออกมาจากคณะศิลปศาสตร์และวิทยาศาสตร์ เพื่อให้เกิดความคล่องตัวในการบริการวิชาการและการจัดหลักสูตรครูที่ตรงเป้าหมาย",
+        "time2-role": "ขยายหลักสูตรบัณฑิตศึกษา (ปริญญาโท-เอก)",
+        "time2-period": "พ.ศ. 2561 - 2563",
+        "time2-body": "เปิดสอนวิชาเฉพาะทางหลักสูตรและการสอน และการบริหารการศึกษาในระดับปริญญาโทและปริญญาเอก เพื่อพัฒนาผู้อำนวยการโรงเรียนและนักยุทธศาสตร์นโยบายการศึกษา",
+        "time3-role": "มุ่งสู่สากลและนวัตกรรมห้องเรียนยุคดิจิทัล",
+        "time3-period": "พ.ศ. 2567 - ปัจจุบัน",
+        "time3-body": "ก้าวสู่การเป็นสถาบันชั้นนำในการผลิตและฝึกอบรมครูข้ามพรมแดนลุ่มแม่น้ำโขง พัฒนาจิตวิญญาณครูประยุกต์ทักษะ AI และสื่อความรู้ดิจิทัลเพื่อโรงเรียนท้องถิ่นอย่างยั่งยืน",
+        "curr-badge": "DEGREE FRAMEWORK",
         "curr-title": "หลักสูตรการศึกษาของเรา",
         "tab-bachelor": "ปริญญาตรี (B.Ed.)",
         "tab-master": "ปริญญาโท (M.Ed.)",
         "tab-doctoral": "ปริญญาเอก (Ph.D. / Ed.D.)",
-        "adm-badge": "ระบบรับสมัครนักศึกษาใหม่",
-        "adm-title": "พร้อมร่วมเดินทางไปกับเราหรือยัง?",
-        "adm-tcas-header": "รอบการรับสมัครเรียนระดับปริญญาตรี (TCAS NPU)",
+        "adm-badge": "ADMISSION SYSTEM",
+        "adm-title": "พร้อมสมัครเรียนแล้วหรือยัง?",
         "adm-r1-title": "TCAS รอบที่ 1 Portfolio",
         "adm-r1-period": "ช่วงรับสมัคร: พ.ย. - ม.ค.",
         "adm-r1-body": "พิจารณาประวัติการเรียน ผลงานทางวิชาการ กิจกรรม และความสามารถพิเศษ ไม่ต้องสอบข้อเขียน",
@@ -755,7 +691,7 @@ const langTranslations = {
         "calc-sch-lbl": "สิทธิ์ทุนการศึกษา",
         "calc-sch-val": "กยศ. / กอศ. / ทุนเรียนดี",
         "currency-baht": "บาท",
-        "news-badge": "ข่าวสารและกิจกรรม",
+        "news-badge": "MY LATEST WORKS",
         "news-title": "ข่าวประชาสัมพันธ์ล่าสุด",
         "tag-academic": "วิชาการ",
         "tag-activity": "ข่าวกิจกรรม",
@@ -764,7 +700,15 @@ const langTranslations = {
         "news2-title": "กิจกรรมเตรียมความพร้อมวิชาชีพครูสู่ยุคดิจิทัล สำหรับนักศึกษาฝึกอบรมการสอนในสถานศึกษาจริง",
         "news2-excerpt": "เตรียมความพร้อมทักษะจิตวิญญาณความเป็นครูและทักษะประยุกต์ใช้เทคโนโลยี AI เพื่อสนับสนุนการจัดการคลาสเรียนอย่างมีความสุขสร้างสรรค์...",
         "btn-news-read": "อ่านรายละเอียดข่าว",
-        "con-badge": "ติดต่อคณะของเรา",
+        "test-badge": "PEOPLE TALK ABOUT US",
+        "test-title": "เสียงสะท้อนจากความสำเร็จ",
+        "t1-body": "\"การเรียนการสอนครูที่นี่เน้นการจับคู่และฝึกอบรมในสถาบันการศึกษาจริง คณาจารย์มีความทุ่มเทและดูแลอย่างใกล้ชิด อุปกรณ์เทคโนโลยีช่วยให้ฉันสามารถจัดบทเรียนสมัยใหม่ได้เก่งมากค่ะ\"",
+        "t1-name": "ศรัญญา คนดี",
+        "t1-role": "บัณฑิตครูภาษาไทยรุ่นที่ 7 | ปัจจุบันครูประจำการรัฐบาล",
+        "t2-body": "\"หลักสูตรปริญญาเอกสาขาหลักสูตรและการสอนขัดเกลาวิสัยทัศน์ทางวิชาการเชิงลุ่มน้ำโขงได้ลุ่มลึกมาก ระบบจัดสอบวิจัยทำได้โปร่งใสและท้าทาย ช่วยเสริมภาวะผู้นำทางนวัตกรรมอย่างยอดเยี่ยม\"",
+        "t2-name": "ดร.ธวัชชัย มีชัย",
+        "t2-role": "ศิษย์เก่า ปร.ด. หลักสูตรและการสอน | ปัจจุบันผู้อำนวยการโรงเรียนมัธยม",
+        "con-badge": "CONTACT US",
         "con-title": "ช่องทางการติดต่อ",
         "con-info-hdr": "สำนักงานคณบดี คณะครุศาสตร์",
         "con-lbl-addr": "ที่ตั้งสำนักงาน",
@@ -778,17 +722,12 @@ const langTranslations = {
         "form-msg-lbl": "ข้อความติดต่อสอบถาม",
         "form-btn-submit": "ส่งข้อความสอบถาม",
         "btn-map-full": "ดูแผนที่ขนาดใหญ่บน Google Maps",
-        "foot-about": "คณะครุศาสตร์ มหาวิทยาลัยนครพนม มุ่งเน้นกระบวนการผลิตครูที่มีทักษะศตวรรษที่ 21 มีความเชี่ยวชาญการใช้เทคโนโลยี สอดแทรกจิตวิญญาณความเป็นครูเพื่ออนาคตของชุมชนเชิงพื้นที่",
-        "foot-quick-hdr": "ลิงก์เมนูด่วน",
-        "foot-aff-hdr": "หน่วยงานภายนอก",
-        "foot-credit-hdr": "We Educate the Future",
-        "foot-credit-body": "\"ครูไม่ได้แค่สอนในวันนี้ แต่ร่วมกันสถาปนาสร้างรากฐานวันพรุ่งนี้ของชาติและอนุภูมิภาคลุ่มแม่น้ำโขง\"",
-        "foot-policy": "นโยบายความเป็นส่วนตัว",
-        "foot-terms": "ข้อตกลงและเงื่อนไข",
-        "link-npu": "มหาวิทยาลัยนครพนม",
-        "link-ksp": "คุรุสภา (Teachers' Council)",
-        "link-mhesi": "กระทรวง อว. (MHESI)",
-        "link-tcas": "ระบบสมัครเรียน TCAS",
+        "foot-cta": "Let's build a brighter educational future together.",
+        "foot-cta-link": "Start by applying online now (เริ่มต้นด้วยการสมัครเรียนออนไลน์)",
+        "link-npu": "Nakhon Phanom University",
+        "link-ksp": "Kuru Sapa",
+        "link-mhesi": "MHESI",
+        "link-tcas": "MyTCAS",
         "dean-modal-badge": "สาส์นจากใจผู้บริหาร",
         "dean-modal-title": "สารจากคณบดี คณะครุศาสตร์ มหาวิทยาลัยนครพนม",
         "dean-modal-p1": "เรียน นักศึกษา คณาจารย์ บุคลากร และผู้เข้าเยี่ยมชมทุกท่าน",
@@ -805,51 +744,51 @@ const langTranslations = {
     },
     en: {
         "site-title": "Faculty of Education, Nakhon Phanom University | คณะครุศาสตร์ มหาวิทยาลัยนครพนม",
-        "nav-brand-uni": "Nakhon Phanom University",
-        "nav-brand-faculty": "Faculty of Education",
-        "nav-home": "Home",
-        "nav-about": "About",
-        "nav-curriculum": "Curriculums",
-        "nav-admission": "Admissions",
-        "nav-news": "News",
-        "nav-contact": "Contact",
-        "hero-badge": "Welcome to the Faculty of Education, NPU",
-        "hero-subtitle": "\"Meticulously aiming to become a leading institution in pedagogical knowledge and teacher development within the Mekong subregion, founded upon active real-life practice and academic contributions.\"",
-        "hero-btn-apply": "Apply Now Online",
-        "hero-btn-programs": "Explore Curriculums",
-        "stat-est": "Established Year",
-        "stat-prog": "Total Curriculums Open",
-        "stat-stud": "Active Enrolled Students",
-        "stat-employ": "Graduate Employment Rate",
-        "about-badge": "PHILOSOPHY & VALUES",
-        "about-title": "Moving Forward to a Solid Future",
-        "vision-title": "Faculty Vision",
-        "vision-body": "\"The Faculty of Education is committed to becoming a leading institute in professional teacher learning and educational personnel development in the Mekong River subregion, emphasizing high-quality graduates meeting professional standards based on work-integrated learning, moral ethics, and social responsibilities.\"",
-        "mission-title": "Missions",
-        "mission-1": "Produce high-caliber graduate teachers with supreme capabilities adjusting to rapid social evolution.",
-        "mission-2": "Conduct outstanding research and build educational innovations fitting local area development needs.",
-        "mission-3": "Provide rigorous academic services to local communities and school clusters to sustain educational development.",
-        "edu-header": "Corporate Core Values \"EDU\"",
-        "val-e-title": "Empowerment",
-        "val-e-body": "Boosting intellect, promoting opportunities, and leveraging the supreme latent talents of students in academic output.",
-        "val-d-title": "Dedication",
-        "val-d-body": "Sacrifice, high responsibility, and profound concern in instructional delivery driven by true educational spirits.",
-        "val-u-title": "Uniqueness",
-        "val-u-body": "Outstanding practical capabilities, solid core knowledge, and highly optimized expertise customized for the local Mekong area.",
-        "dean-badge": "MESSAGE FROM DEAN",
+        "nav-brand-sig": "EduNPU",
+        "nav-home": "SERVICES",
+        "nav-about": "ABOUT",
+        "nav-curriculum": "CURRICULUMS",
+        "nav-admission": "ADMISSIONS",
+        "nav-news": "NEWS",
+        "nav-contact": "CONTACT",
+        "hero-email": "edu@npu.ac.th",
+        "hero-est-title": "YEARS",
+        "hero-est-sub": "FOUNDED EXPERIENCE",
+        "hero-right-desc": "\"We meticulously aim to produce premium teacher graduates with supreme professional capabilities, founded upon work-integrated practice and the cultivation of pedagogical ethics within the Mekong subregion.\"",
+        "seal-tag1": "NPU CERTIFIED",
+        "seal-tag2": "PROFESSIONAL EDUCATOR",
+        "p1-title": "Undergraduate (B.Ed.)",
+        "p1-sub": "9 Programs | 4-Year Bachelor of Education",
+        "p2-title": "Master's Degree (M.Ed.)",
+        "p2-sub": "3 Programs | Administration & Innovation",
+        "p3-title": "Doctoral (Ph.D. / Ed.D.)",
+        "p3-sub": "2 Programs | Advanced Educational Research",
+        "help-title": "What do we support?",
+        "help-desc": "The Faculty of Education, Nakhon Phanom University focuses on reinforcing modern learning structures and active pedagogy paradigms. We fully empower classrooms with smart digital resources, computing labs, transparent tuition calculator options, and regional networks to shape high-impact teachers in the Mekong subregion.",
+        "stat-stud-tag": "ACTIVE STUDENTS",
+        "stat-employ-tag": "EMPLOYMENT RATE",
+        "dean-badge": "DEAN'S MESSAGE",
         "dean-header": "\"Developing Elite Teacher Graduates to Power Mekong Subregion Communities\"",
-        "dean-name": "Asst. Prof. Dr. Kriangkrai Phasuta",
-        "dean-role": "Dean of the Faculty of Education, NPU",
         "dean-excerpt": "\"We are extremely thrilled to welcome all academics and potential students to our online hub. The Faculty of Education represents a pivotal teacher nurturing base, actively pursuing educational reforms, developing teacher professionals of immense skill...\"",
-        "dean-btn-read": "Read Full Letter",
-        "curr-badge": "CURRICULUM DEGREES",
+        "dean-btn-read": "Read Full Message",
+        "time-badge": "ACADEMIC JOURNEY",
+        "time-title": "History of the Faculty",
+        "time1-role": "Established by University Council Resolution",
+        "time1-period": "October 1, 2015",
+        "time1-body": "Established to streamline teacher education from the Faculty of Liberal Arts and Science, optimizing operational agility and targeting regional primary-secondary school needs.",
+        "time2-role": "Expanded Graduate School (M.Ed. & Ph.D.)",
+        "time2-period": "2018 - 2020",
+        "time2-body": "Introduced specialized Master and Doctorate streams in Curriculum & Instruction and Educational Administration to foster institutional leaders.",
+        "time3-role": "Moving Global & Digital Classroom Innovation",
+        "time3-period": "2024 - Present",
+        "time3-body": "Pioneering cross-border teacher preparation models in the Mekong basin, blending pedagogy with AI applications and digital courseware.",
+        "curr-badge": "DEGREE FRAMEWORK",
         "curr-title": "Our Educational Framework",
         "tab-bachelor": "Undergraduate (B.Ed.)",
         "tab-master": "Master's (M.Ed.)",
         "tab-doctoral": "Doctoral (Ph.D. / Ed.D.)",
-        "adm-badge": "Admissions Hub",
+        "adm-badge": "ADMISSION SYSTEM",
         "adm-title": "Are You Ready to Join Us?",
-        "adm-tcas-header": "Undergraduate Admission Streams (NPU TCAS)",
         "adm-r1-title": "TCAS Round 1 Portfolio",
         "adm-r1-period": "Timeline: Nov - Jan",
         "adm-r1-body": "Evaluation of school performance, certificate portfolios, scientific projects, or extraordinary traits without written tests.",
@@ -878,8 +817,8 @@ const langTranslations = {
         "calc-sch-lbl": "Financial Aid Eligibility",
         "calc-sch-val": "Student Loans (กยศ.) / Talent Scholarships",
         "currency-baht": "THB",
-        "news-badge": "LATEST NEWS",
-        "news-title": "Official Public Announcements",
+        "news-badge": "MY LATEST WORKS",
+        "news-title": "Latest News & Events",
         "tag-academic": "Academic",
         "tag-activity": "Activities",
         "news1-title": "Faculty of Education Hosts 9th National Conference on Mekong Learning Management Innovation",
@@ -887,6 +826,14 @@ const langTranslations = {
         "news2-title": "Pre-Pedagogy Integration Program Preparing Future Teacher Graduates for Digital Smart-Schooling",
         "news2-excerpt": "Focuses on instilling profound professional ethics, classroom engagement tactics, and modern digital AI tools to guide children...",
         "btn-news-read": "Read Details",
+        "test-badge": "PEOPLE TALK ABOUT US",
+        "test-title": "Echoes of Success",
+        "t1-body": "\"Nurturing programs here are deeply grounded in real-life teaching clinics. The professors are exceptionally dedicated, and advanced smart classroom suites allow us to design highly engaging digital courses.\"",
+        "t1-name": "Saranya Kondee",
+        "t1-role": "Thai Language Graduate (Gen 7) | Current Government School Educator",
+        "t2-body": "\"Pursuing a Doctorate in Curriculum & Instruction has broadened my educational perspectives in the Mekong region. The research review standard is rigorous, transparent, and highly empowering.\"",
+        "t2-name": "Dr. Thawatchai Meechai",
+        "t2-role": "Ph.D. Curriculum & Instruction Alumnus | Current Secondary School Principal",
         "con-badge": "CONTACT US",
         "con-title": "Reach Out to Our Campus",
         "con-info-hdr": "Office of the Dean, Faculty of Education",
@@ -901,18 +848,13 @@ const langTranslations = {
         "form-msg-lbl": "Your Inquiry Message Content",
         "form-btn-submit": "Send Inquiry Message",
         "btn-map-full": "View Fullscreen on Google Maps",
-        "foot-about": "Faculty of Education, Nakhon Phanom University focuses on producing teachers equipped with 21st-century teaching capabilities, educational tech skills, and absolute pedagogical ethics.",
-        "foot-quick-hdr": "Quick Page Links",
-        "foot-aff-hdr": "External Authorities",
-        "foot-credit-hdr": "We Educate the Future",
-        "foot-credit-body": "\"Nurturing educators who will not merely deliver classroom courses today, but actively formulate the glorious pillars of tomorrow's nations.\"",
-        "foot-policy": "Privacy Policy",
-        "foot-terms": "Terms & Conditions",
+        "foot-cta": "Let's build a brighter educational future together.",
+        "foot-cta-link": "Start by applying online now",
         "link-npu": "Nakhon Phanom University",
-        "link-ksp": "Teachers' Council (Kuru Sapa)",
-        "link-mhesi": "MHESI Authority (กระทรวง อว.)",
-        "link-tcas": "MyTCAS Admissions Hub",
-        "dean-modal-badge": "EXECUTIVE OFFICE MESSAGE",
+        "link-ksp": "Kuru Sapa",
+        "link-mhesi": "MHESI",
+        "link-tcas": "MyTCAS",
+        "dean-modal-badge": "EXECUTIVE MESSAGE",
         "dean-modal-title": "Letter from Dean of Faculty of Education, NPU",
         "dean-modal-p1": "Dear Students, Faculty Members, Staff, and Visitors,",
         "dean-modal-p2": "On behalf of the Faculty of Education, Nakhon Phanom University, it is my utmost honor and pleasure to welcome you to our official online communication portal.",
@@ -946,26 +888,21 @@ function switchLang(lang) {
         const translation = langTranslations[lang][key];
         
         if (translation) {
-            // Check if it's the site title
             if (key === 'site-title') {
                 document.title = translation;
             } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                // If it is placeholder
                 el.placeholder = translation;
             } else {
-                // Normal innerHTML to support signatures with linebreaks
                 el.innerHTML = translation;
             }
         }
     });
 
-    // Update specific title id if present
     const siteTitleEl = document.getElementById('site-title');
     if (siteTitleEl) {
         siteTitleEl.textContent = langTranslations[lang]['site-title'];
     }
 
-    // Update copyright text dynamically
     const copyEl = document.getElementById('footer-copy');
     if (copyEl) {
         copyEl.innerHTML = lang === 'th' ? 
@@ -976,7 +913,6 @@ function switchLang(lang) {
     // Re-populate and render components relying on language
     renderTabContent(activeTab);
     updateCalcPrograms();
-    resetTyping();
 }
 
 // Window Onload Initialization

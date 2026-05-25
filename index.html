@@ -8,10 +8,10 @@
     <meta name="description" content="เว็บไซต์อย่างเป็นทางการ คณะครุศาสตร์ มหาวิทยาลัยนครพนม - มุ่งมั่นผลิต พัฒนาครูและบุคลากรทางการศึกษาที่มีคุณภาพและคุณธรรม">
     <meta name="keywords" content="ครุศาสตร์, มหาวิทยาลัยนครพนม, เรียนครู นครพนม, สมัครเรียนครู, คณะครุศาสตร์ NPU">
     
-    <!-- Google Fonts: Prompt & Sarabun -->
+    <!-- Google Fonts: Prompt, Sarabun & Caveat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,506 +25,423 @@
             theme: {
                 extend: {
                     colors: {
-                        npu: {
-                            blue: {
-                                50: '#f0f4fe',
-                                100: '#e1e9fc',
-                                200: '#c7d7fa',
-                                300: '#a3bbf6',
-                                400: '#7a96f1',
-                                500: '#556dea',
-                                600: '#3c4ce0',
-                                700: '#2e39c7',
-                                800: '#262ea1',
-                                900: '#1e247e',
-                                950: '#11134b',
-                                corporate: '#1e3a8a',
-                                hover: '#1d4ed8'
-                            },
-                            gold: {
-                                50: '#fefbeb',
-                                100: '#fdf5c7',
-                                200: '#fbe98b',
-                                300: '#f8d54d',
-                                400: '#f5c022',
-                                500: '#e5a50e',
-                                600: '#ca8408',
-                                700: '#a56208',
-                                800: '#854c0e',
-                                900: '#713f0f',
-                                950: '#422006',
-                                brand: '#f59e0b'
-                            },
-                            terracotta: {
-                                50: '#fff7ed',
-                                100: '#ffedd5',
-                                200: '#fed7aa',
-                                300: '#fdbb74',
-                                400: '#fda4af',
-                                500: '#f97316',
-                                600: '#ea580c',
-                                700: '#c2410c',
-                                800: '#9a3412',
-                                950: '#431407',
-                                edu: '#ea580c'
-                            }
+                        canvas: {
+                            light: '#FAF7F0',
+                            dark: '#0B1D25'
+                        },
+                        ink: {
+                            light: '#0B2B3C',
+                            dark: '#F1F5F9'
+                        },
+                        artistic: {
+                            emerald: '#167C67',
+                            emeraldHover: '#0B5646',
+                            yellow: '#EEB63E',
+                            terracotta: '#DE583E',
+                            terracottaHover: '#BD3B22',
+                            lightBeige: '#FAF7F0',
+                            cardBeige: '#F5F1E5'
                         }
                     },
                     fontFamily: {
                         sans: ['Prompt', 'Sarabun', 'sans-serif'],
                         prompt: ['Prompt', 'sans-serif'],
-                        sarabun: ['Sarabun', 'sans-serif']
-                    },
-                    boxShadow: {
-                        'glass-light': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
-                        'glass-dark': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                        sarabun: ['Sarabun', 'sans-serif'],
+                        signature: ['Caveat', 'cursive']
                     }
                 }
             }
         }
     </script>
     <style type="text/css">
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .bg-canvas-theme {
+            background-color: #FAF7F0;
         }
-        .dark .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .dark .bg-canvas-theme {
+            background-color: #0B1D25;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+        .bg-card-theme {
+            background-color: #F5F1E5;
         }
-        .dark .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .dark .bg-card-theme {
+            background-color: #122B35;
         }
-        .glow-gold:hover {
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.45);
+        .text-ink-theme {
+            color: #0B2B3C;
         }
-        .glow-blue:hover {
-            box-shadow: 0 0 25px rgba(37, 99, 235, 0.35);
+        .dark .text-ink-theme {
+            color: #F1F5F9;
+        }
+        .border-ink-theme {
+            border-color: #0B2B3C;
+        }
+        .dark .border-ink-theme {
+            border-color: #334155;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 transition-colors duration-300 font-sans">
+<body class="bg-canvas-theme text-ink-theme transition-colors duration-300 font-sans">
 
-    <!-- Top Accent Bar -->
-    <div class="h-2 w-full bg-gradient-to-r from-npu-blue-900 via-npu-gold-500 to-npu-terracotta-600"></div>
+    <!-- Header / Navbar -->
+    <header class="py-6 px-6 md:px-12 w-full max-w-7xl mx-auto flex justify-between items-center z-50 relative">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-2 group">
+            <span class="font-signature text-4xl font-bold text-ink-theme dark:text-artistic-yellow" data-translate="nav-brand-sig">EduNPU</span>
+            <div class="h-2 w-2 rounded-full bg-artistic-terracotta transform group-hover:scale-150 transition duration-300"></div>
+        </a>
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 transition-all duration-300 w-full" id="header-nav">
-        <nav class="glass-nav shadow-glass-light dark:shadow-glass-dark py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
-            <!-- Brand Logo & Name -->
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-npu-gold-500 to-npu-blue-800 flex items-center justify-center text-white font-bold text-xl shadow-md transform group-hover:scale-105 transition duration-300">
-                    <!-- Custom SVG representing Phra That Phanom and Wisdom (Torch/Stupa combo) -->
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 22h20L12 2zM12 6l-6 12h12L12 6zM12 11v3"></path>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-sm font-semibold tracking-wider text-npu-blue-900 dark:text-npu-gold-400 font-prompt" data-translate="nav-brand-uni">มหาวิทยาลัยนครพนม</span>
-                    <span class="text-lg font-bold text-slate-900 dark:text-white leading-tight font-prompt" data-translate="nav-brand-faculty">คณะครุศาสตร์</span>
-                </div>
+        <!-- Capsule Navigation Menu Links -->
+        <div class="hidden lg:flex items-center space-x-1 bg-card-theme dark:bg-slate-900 border border-slate-300/40 dark:border-slate-800 rounded-full px-2 py-1.5 shadow-sm">
+            <a href="#" class="px-5 py-2 text-xs font-bold text-ink-theme dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-artistic-emerald rounded-full transition duration-300 font-prompt" data-translate="nav-home">SERVICES</a>
+            <a href="#about" class="px-5 py-2 text-xs font-bold text-ink-theme dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-artistic-emerald rounded-full transition duration-300 font-prompt" data-translate="nav-about">ABOUT</a>
+            <a href="#curriculum" class="px-5 py-2 text-xs font-bold text-ink-theme dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-artistic-emerald rounded-full transition duration-300 font-prompt" data-translate="nav-curriculum">CURRICULUMS</a>
+            <a href="#admission" class="px-5 py-2 text-xs font-bold text-ink-theme dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-artistic-emerald rounded-full transition duration-300 font-prompt" data-translate="nav-admission">ADMISSIONS</a>
+            <a href="#news" class="px-5 py-2 text-xs font-bold text-ink-theme dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-artistic-emerald rounded-full transition duration-300 font-prompt" data-translate="nav-news">NEWS</a>
+            <a href="#contact" class="px-5 py-2 text-xs font-bold text-ink-theme dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-artistic-emerald rounded-full transition duration-300 font-prompt" data-translate="nav-contact">CONTACT</a>
+        </div>
+
+        <!-- Phone and Actions -->
+        <div class="hidden lg:flex items-center space-x-4">
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="p-2.5 rounded-full hover:bg-card-theme dark:hover:bg-slate-800 text-ink-theme dark:text-slate-300 transition duration-300" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon text-lg block dark:hidden"></i>
+                <i class="fa-solid fa-sun text-lg hidden dark:block"></i>
+            </button>
+            <!-- Language Selector Button -->
+            <button id="lang-btn" class="flex items-center space-x-2 px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-full hover:bg-card-theme dark:hover:bg-slate-800 transition duration-300">
+                <span class="font-bold text-xs" id="current-lang-text">TH</span>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </button>
+            <!-- Dropdown Translation Panel -->
+            <div id="lang-dropdown" class="absolute right-12 mt-28 w-28 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg hidden overflow-hidden z-50">
+                <button onclick="switchLang('th')" class="w-full text-left px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold block transition">ภาษาไทย (TH)</button>
+                <button onclick="switchLang('en')" class="w-full text-left px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold block transition">English (EN)</button>
+            </div>
+            
+            <!-- Capsule Phone Contact -->
+            <a href="tel:+6642587181" class="flex items-center space-x-2 px-5 py-2.5 bg-card-theme dark:bg-slate-900 border border-slate-300/40 dark:border-slate-800 rounded-full hover:bg-white dark:hover:bg-slate-800 transition duration-300 shadow-sm">
+                <span class="text-xs font-bold font-prompt text-ink-theme dark:text-slate-300">+042 587 181</span>
+                <div class="w-7 h-7 rounded-full bg-ink-theme dark:bg-artistic-yellow flex items-center justify-center text-white dark:text-slate-950 text-xs"><i class="fa-solid fa-phone"></i></div>
             </a>
+        </div>
 
-            <!-- Desktop Menu Links -->
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="#" class="text-slate-700 hover:text-npu-terracotta-600 dark:text-slate-300 dark:hover:text-npu-gold-300 font-medium transition duration-300 font-prompt" data-translate="nav-home">หน้าแรก</a>
-                <a href="#about" class="text-slate-700 hover:text-npu-terracotta-600 dark:text-slate-300 dark:hover:text-npu-gold-300 font-medium transition duration-300 font-prompt" data-translate="nav-about">เกี่ยวกับคณะ</a>
-                <a href="#curriculum" class="text-slate-700 hover:text-npu-terracotta-600 dark:text-slate-300 dark:hover:text-npu-gold-300 font-medium transition duration-300 font-prompt" data-translate="nav-curriculum">หลักสูตร</a>
-                <a href="#admission" class="text-slate-700 hover:text-npu-terracotta-600 dark:text-slate-300 dark:hover:text-npu-gold-300 font-medium transition duration-300 font-prompt" data-translate="nav-admission">รับสมัครเรียน</a>
-                <a href="#news" class="text-slate-700 hover:text-npu-terracotta-600 dark:text-slate-300 dark:hover:text-npu-gold-300 font-medium transition duration-300 font-prompt" data-translate="nav-news">ข่าวประชาสัมพันธ์</a>
-                <a href="#contact" class="text-slate-700 hover:text-npu-terracotta-600 dark:text-slate-300 dark:hover:text-npu-gold-300 font-medium transition duration-300 font-prompt" data-translate="nav-contact">ติดต่อเรา</a>
-            </div>
-
-            <!-- Language and Theme Actions -->
-            <div class="hidden lg:flex items-center space-x-4">
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="p-2.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition duration-300" aria-label="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon text-lg block dark:hidden"></i>
-                    <i class="fa-solid fa-sun text-lg hidden dark:block"></i>
-                </button>
-                <!-- Language Toggle Dropdown Container -->
-                <div class="relative">
-                    <button id="lang-btn" class="flex items-center space-x-2 px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition duration-300">
-                        <span class="font-bold text-sm" id="current-lang-text">TH</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </button>
-                    <!-- Dropdown Content -->
-                    <div id="lang-dropdown" class="absolute right-0 mt-2 w-28 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg hidden overflow-hidden">
-                        <button onclick="switchLang('th')" class="w-full text-left px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 text-sm font-semibold block transition">ภาษาไทย (TH)</button>
-                        <button onclick="switchLang('en')" class="w-full text-left px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 text-sm font-semibold block transition">English (EN)</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <div class="flex items-center space-x-3 lg:hidden">
-                <!-- Mobile Theme Toggle -->
-                <button id="mobile-theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition duration-300" aria-label="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon text-base block dark:hidden"></i>
-                    <i class="fa-solid fa-sun text-base hidden dark:block"></i>
-                </button>
-                <!-- Mobile Language Selector -->
-                <button id="mobile-lang-btn" class="px-2.5 py-1 border border-slate-300 dark:border-slate-700 rounded-full text-xs font-bold transition">
-                    TH
-                </button>
-                <!-- Mobile Burger Menu -->
-                <button id="menu-btn" class="p-2.5 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition focus:outline-none" aria-label="Open Navigation Menu">
-                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden w-full glass-nav shadow-lg border-t border-slate-200 dark:border-slate-800 absolute top-full left-0 z-40 transition-all duration-300 overflow-hidden max-h-0">
-            <div class="px-6 py-6 flex flex-col space-y-4 font-prompt">
-                <a href="#" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-300 hover:text-npu-terracotta-600 font-medium py-2 border-b border-slate-100 dark:border-slate-800 transition" data-translate="nav-home">หน้าแรก</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-300 hover:text-npu-terracotta-600 font-medium py-2 border-b border-slate-100 dark:border-slate-800 transition" data-translate="nav-about">เกี่ยวกับคณะ</a>
-                <a href="#curriculum" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-300 hover:text-npu-terracotta-600 font-medium py-2 border-b border-slate-100 dark:border-slate-800 transition" data-translate="nav-curriculum">หลักสูตร</a>
-                <a href="#admission" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-300 hover:text-npu-terracotta-600 font-medium py-2 border-b border-slate-100 dark:border-slate-800 transition" data-translate="nav-admission">รับสมัครเรียน</a>
-                <a href="#news" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-300 hover:text-npu-terracotta-600 font-medium py-2 border-b border-slate-100 dark:border-slate-800 transition" data-translate="nav-news">ข่าวประชาสัมพันธ์</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-300 hover:text-npu-terracotta-600 font-medium py-2 transition" data-translate="nav-contact">ติดต่อเรา</a>
-            </div>
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex items-center space-x-3 lg:hidden">
+            <!-- Mobile Theme Toggle -->
+            <button id="mobile-theme-toggle" class="p-2 rounded-full hover:bg-card-theme dark:hover:bg-slate-800 text-ink-theme dark:text-slate-300 transition duration-300" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon text-base block dark:hidden"></i>
+                <i class="fa-solid fa-sun text-base hidden dark:block"></i>
+            </button>
+            <!-- Mobile Language Selector -->
+            <button id="mobile-lang-btn" class="px-2.5 py-1 border border-slate-300 dark:border-slate-700 rounded-full text-[10px] font-bold transition">
+                TH
+            </button>
+            <!-- Mobile Burger Menu -->
+            <button id="menu-btn" class="p-2.5 text-ink-theme dark:text-slate-300 hover:bg-card-theme dark:hover:bg-slate-800 rounded-lg transition focus:outline-none" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-900">
-        <!-- Hero Background Image with parallax overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="assets/npu_edu_hero.png" alt="คณะครุศาสตร์ มหาวิทยาลัยนครพนม" class="w-full h-full object-cover object-center opacity-45 scale-105 transition-transform duration-1000 transform hover:scale-100">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-npu-blue-950/70 via-slate-900/40 to-npu-terracotta-950/40"></div>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden w-full bg-canvas-theme border-t border-slate-200 dark:border-slate-800 absolute top-[80px] left-0 z-40 transition-all duration-300 overflow-hidden max-h-0">
+        <div class="px-6 py-6 flex flex-col space-y-4 font-prompt">
+            <a href="#" onclick="toggleMobileMenu()" class="text-ink-theme dark:text-slate-300 hover:text-artistic-emerald font-bold py-2 border-b border-slate-200/40 dark:border-slate-800 transition" data-translate="nav-home">หน้าแรก</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="text-ink-theme dark:text-slate-300 hover:text-artistic-emerald font-bold py-2 border-b border-slate-200/40 dark:border-slate-800 transition" data-translate="nav-about">เกี่ยวกับคณะ</a>
+            <a href="#curriculum" onclick="toggleMobileMenu()" class="text-ink-theme dark:text-slate-300 hover:text-artistic-emerald font-bold py-2 border-b border-slate-200/40 dark:border-slate-800 transition" data-translate="nav-curriculum">หลักสูตร</a>
+            <a href="#admission" onclick="toggleMobileMenu()" class="text-ink-theme dark:text-slate-300 hover:text-artistic-emerald font-bold py-2 border-b border-slate-200/40 dark:border-slate-800 transition" data-translate="nav-admission">รับสมัครเรียน</a>
+            <a href="#news" onclick="toggleMobileMenu()" class="text-ink-theme dark:text-slate-300 hover:text-artistic-emerald font-bold py-2 border-b border-slate-200/40 dark:border-slate-800 transition" data-translate="nav-news">ข่าวประชาสัมพันธ์</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="text-ink-theme dark:text-slate-300 hover:text-artistic-emerald font-bold py-2 transition" data-translate="nav-contact">ติดต่อเรา</a>
+        </div>
+    </div>
+
+    <!-- Hero Area (Editorial Asymmetrical Layout) -->
+    <section class="min-h-[85vh] py-10 px-6 md:px-12 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center overflow-hidden">
+        <!-- Left Hero Grid: Massive Typography & Subtitles (Lg: 4 Cols) -->
+        <div class="lg:col-span-4 flex flex-col items-start z-10 relative">
+            <h1 class="text-5xl md:text-7xl font-black font-prompt text-ink-theme dark:text-white leading-[1.1] mb-6 tracking-tight">
+                We Educate,<br>The Future
+            </h1>
+            <a href="mailto:edu@npu.ac.th" class="text-sm font-bold font-prompt text-artistic-terracotta hover:text-artistic-terracottaHover underline underline-offset-4 decoration-2 tracking-wide mb-14 transition" data-translate="hero-email">edu@npu.ac.th</a>
+            
+            <!-- Est Year Info -->
+            <div class="flex items-baseline space-x-3 mt-auto">
+                <span class="text-6xl font-black text-ink-theme dark:text-white font-prompt">10</span>
+                <div class="flex flex-col font-prompt leading-tight text-slate-500 dark:text-slate-400">
+                    <span class="text-xs font-bold uppercase tracking-widest text-ink-theme dark:text-artistic-yellow" data-translate="hero-est-title">YEARS</span>
+                    <span class="text-[10px] font-bold" data-translate="hero-est-sub">FOUNDED EXPERIENCE</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Hero Content Card -->
-        <div class="container mx-auto px-6 md:px-12 relative z-10 py-20 flex flex-col items-center text-center">
-            <!-- Typist Welcome Badge -->
-            <div class="inline-flex items-center space-x-2 bg-npu-blue-900/60 dark:bg-npu-gold-500/20 backdrop-blur-md px-4 py-2 rounded-full border border-npu-gold-500/30 mb-8 text-npu-gold-300 dark:text-npu-gold-300 font-prompt font-semibold text-xs md:text-sm tracking-wide shadow-lg animate-pulse">
-                <span class="w-2.5 h-2.5 rounded-full bg-npu-gold-400"></span>
-                <span id="hero-welcome-badge" data-translate="hero-badge">ยินดีต้อนรับสู่ คณะครุศาสตร์ มหาวิทยาลัยนครพนม</span>
+        <!-- Center Hero Grid: Cutout Portrait Layered on Emerald Paint Stroke SVG (Lg: 5 Cols) -->
+        <div class="lg:col-span-5 flex justify-center items-center relative min-h-[420px] md:min-h-[500px]">
+            <!-- Paint Stroke SVG - Back layer -->
+            <div class="absolute w-[110%] h-[110%] md:w-[120%] md:h-[120%] z-0 select-none pointer-events-none opacity-90">
+                <img src="assets/brush_stroke.svg" alt="Brush Stroke Background" class="w-full h-full object-contain">
             </div>
-
-            <!-- Typing Animated Header -->
-            <div class="h-10 md:h-14 mb-4 flex items-center justify-center">
-                <h2 id="typing-text" class="text-lg md:text-2xl font-bold font-prompt text-npu-gold-300 dark:text-npu-gold-400 tracking-wider"></h2>
+            <!-- Portrait Image - Front layer -->
+            <div class="relative z-10 w-full max-w-[360px] aspect-[4/5] overflow-hidden rounded-full shadow-2xl border-8 border-card-theme dark:border-slate-800 transition transform hover:scale-[1.02] duration-500 flex items-center justify-center">
+                <img src="assets/dean_portrait.png" alt="ผศ.ดร.เกรียงไกร ผาสุตะ" class="w-full h-full object-cover">
             </div>
+        </div>
 
-            <!-- Slogan & Bold Statement -->
-            <h1 class="text-4xl md:text-7xl font-extrabold font-prompt text-white tracking-tight leading-none mb-6">
-                WE EDUCATE THE FUTURE
-            </h1>
-            <p class="text-base md:text-xl font-sarabun text-slate-200 max-w-3xl leading-relaxed mb-10 shadow-sm" data-translate="hero-subtitle">
-                "มุ่งมั่นสู่การเป็นคณะชั้นนำแห่งการเรียนรู้ทางวิชาชีพครูและบุคลากรทางการศึกษาในระดับอนุภูมิภาคลุ่มน้ำโขง บนฐานการเรียนรู้จากการปฏิบัติจริงและการบริการวิชาการ"
+        <!-- Right Hero Grid: Seal Badge & Slogan Typo (Lg: 3 Cols) -->
+        <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end lg:text-right h-full py-6 z-10 relative">
+            <p class="text-sm font-sarabun text-slate-600 dark:text-slate-300 leading-relaxed max-w-xs mb-8 lg:mb-0" data-translate="hero-right-desc">
+                "เรามุ่งเน้นการผลิตบัณฑิตครูให้มีคุณภาพตามมาตรฐานวิชาชีพ บนฐานการปฏิบัติจริง และการบ่มเพาะจิตวิญญาณความเป็นครูเพื่ออนาคตของชุมชนเชิงพื้นที่ลุ่มน้ำโขง"
+            </p>
+            
+            <!-- Seal Stamp Badge (IDF Certified Like Badge) -->
+            <div class="flex items-center space-x-4 lg:space-x-0 lg:flex-col lg:items-end mt-auto">
+                <!-- Circular Stamp Icon -->
+                <div class="w-16 h-16 rounded-full border-2 border-dashed border-ink-theme dark:border-artistic-yellow flex items-center justify-center p-1.5 rotate-12 animate-[spin_20s_linear_infinite] mb-3">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-ink-theme dark:text-artistic-yellow"></i>
+                </div>
+                <div class="flex flex-col lg:items-end leading-tight font-prompt">
+                    <span class="text-xs font-black text-ink-theme dark:text-white uppercase tracking-widest" data-translate="seal-tag1">NPU CERTIFIED</span>
+                    <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mt-0.5" data-translate="seal-tag2">PROFESSIONAL EDUCATOR</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Pillars Section (What Do We Help? / Services Layout) -->
+    <section id="about" class="py-24 px-6 md:px-12 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Vertically Stacked Services Cards (Lg: 5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+            <!-- Pillar 1: Undergraduate -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-6 border border-slate-300/30 dark:border-slate-800 flex items-center space-x-6 transform hover:-translate-y-1 transition duration-300 shadow-sm relative overflow-hidden group">
+                <div class="absolute -right-6 -top-6 w-16 h-16 bg-artistic-emerald/5 rounded-full group-hover:scale-150 transition"></div>
+                <div class="w-14 h-14 rounded-full bg-artistic-emerald flex items-center justify-center text-white text-xl flex-shrink-0 shadow-sm"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="font-prompt">
+                    <h4 class="text-base font-bold text-ink-theme dark:text-white" data-translate="p1-title">หลักสูตรปริญญาตรี (B.Ed.)</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-translate="p1-sub">9 สาขาวิชา | หลักสูตรครุศาสตรบัณฑิต 4 ปี</p>
+                </div>
+            </div>
+            <!-- Pillar 2: Graduate -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-6 border border-slate-300/30 dark:border-slate-800 flex items-center space-x-6 transform hover:-translate-y-1 transition duration-300 shadow-sm relative overflow-hidden group">
+                <div class="absolute -right-6 -top-6 w-16 h-16 bg-artistic-yellow/5 rounded-full group-hover:scale-150 transition"></div>
+                <div class="w-14 h-14 rounded-full bg-artistic-yellow flex items-center justify-center text-slate-950 text-xl flex-shrink-0 shadow-sm"><i class="fa-solid fa-book-open"></i></div>
+                <div class="font-prompt">
+                    <h4 class="text-base font-bold text-ink-theme dark:text-white" data-translate="p2-title">หลักสูตรปริญญาโท (M.Ed.)</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-translate="p2-sub">3 สาขาวิชา | การบริหารและนวัตกรรม</p>
+                </div>
+            </div>
+            <!-- Pillar 3: Doctoral -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-6 border border-slate-300/30 dark:border-slate-800 flex items-center space-x-6 transform hover:-translate-y-1 transition duration-300 shadow-sm relative overflow-hidden group">
+                <div class="absolute -right-6 -top-6 w-16 h-16 bg-artistic-terracotta/5 rounded-full group-hover:scale-150 transition"></div>
+                <div class="w-14 h-14 rounded-full bg-artistic-terracotta flex items-center justify-center text-white text-xl flex-shrink-0 shadow-sm"><i class="fa-solid fa-award"></i></div>
+                <div class="font-prompt">
+                    <h4 class="text-base font-bold text-ink-theme dark:text-white" data-translate="p3-title">หลักสูตรปริญญาเอก (Ph.D. / Ed.D.)</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-translate="p3-sub">2 สาขาวิชา | ระดับวิจัยพัฒนาการศึกษาขั้นสูง</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: "What Do We Help?" Bold Copy & Stacked Statistics (Lg: 7 Cols) -->
+        <div class="lg:col-span-7 flex flex-col justify-center items-start lg:pl-8">
+            <h2 class="text-3xl md:text-5xl font-black font-prompt text-ink-theme dark:text-white leading-tight mb-6" data-translate="help-title">
+                What do we support?
+            </h2>
+            <p class="text-sm font-sarabun text-slate-600 dark:text-slate-300 leading-relaxed mb-8" data-translate="help-desc">
+                คณะครุศาสตร์ มหาวิทยาลัยนครพนม มุ่งเน้นการสนับสนุนกระบวนการเรียนรู้และวางโครงสร้างเพื่อการผลิตบุคลากรการสอนที่เก่งกล้าสามารถในศตวรรษที่ 21 เราสนับสนุนเครื่องมือสื่อเทคโนโลยี ห้องปฏิบัติการอัจฉริยะ (Smart Classroom) ระบบประเมินค่าเทอมที่โปร่งใส และการสร้างเครือข่ายครูท้องถิ่นพัฒนาภูมิภาคลุ่มน้ำโขงเชิงประยุกต์ปฏิบัติจริง
             </p>
 
-            <!-- CTA Action Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 w-full max-w-md mb-16">
-                <a href="#admission" class="w-full sm:w-auto text-center px-8 py-4 bg-gradient-to-r from-npu-gold-600 to-npu-gold-500 hover:from-npu-gold-500 hover:to-npu-gold-400 text-slate-950 font-bold font-prompt rounded-xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 glow-gold" data-translate="hero-btn-apply">
-                    สมัครเรียนออนไลน์
-                </a>
-                <a href="#curriculum" class="w-full sm:w-auto text-center px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 hover:border-white/40 font-bold font-prompt rounded-xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition-all duration-300" data-translate="hero-btn-programs">
-                    หลักสูตรที่เปิดสอน
-                </a>
-            </div>
-
-            <!-- Live Counter Stats Section -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 w-full max-w-5xl mt-8">
-                <!-- Stat Card 1 -->
-                <div class="glass-card rounded-2xl p-6 shadow-md border border-white/10 dark:border-slate-800 flex flex-col items-center">
-                    <span class="text-3xl md:text-4xl font-extrabold text-npu-gold-400 font-prompt" id="stat-year" data-target="2015">0</span>
-                    <span class="text-xs md:text-sm font-semibold text-slate-300 font-prompt mt-2" data-translate="stat-est">ปีที่ก่อตั้ง (Established)</span>
+            <!-- Bottom Side-by-Side Massive Stats -->
+            <div class="grid grid-cols-2 gap-8 w-full border-t border-slate-300/40 dark:border-slate-800 pt-8 font-prompt">
+                <!-- Stat 1 -->
+                <div class="flex flex-col">
+                    <span class="text-4xl md:text-5xl font-black text-ink-theme dark:text-white flex"><span id="stat-students" data-target="1200">0</span><span class="text-artistic-emerald ml-1">+</span></span>
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-2" data-translate="stat-stud-tag">ACTIVE STUDENTS</span>
                 </div>
-                <!-- Stat Card 2 -->
-                <div class="glass-card rounded-2xl p-6 shadow-md border border-white/10 dark:border-slate-800 flex flex-col items-center">
-                    <span class="text-3xl md:text-4xl font-extrabold text-white font-prompt flex"><span id="stat-programs" data-target="14">0</span><span class="text-npu-gold-400 ml-1">+</span></span>
-                    <span class="text-xs md:text-sm font-semibold text-slate-300 font-prompt mt-2" data-translate="stat-prog">หลักสูตรรวมที่เปิดสอน</span>
-                </div>
-                <!-- Stat Card 3 -->
-                <div class="glass-card rounded-2xl p-6 shadow-md border border-white/10 dark:border-slate-800 flex flex-col items-center">
-                    <span class="text-3xl md:text-4xl font-extrabold text-white font-prompt flex"><span id="stat-students" data-target="1200">0</span><span class="text-npu-gold-400 ml-1">+</span></span>
-                    <span class="text-xs md:text-sm font-semibold text-slate-300 font-prompt mt-2" data-translate="stat-stud">นักศึกษาปัจจุบัน</span>
-                </div>
-                <!-- Stat Card 4 -->
-                <div class="glass-card rounded-2xl p-6 shadow-md border border-white/10 dark:border-slate-800 flex flex-col items-center">
-                    <span class="text-3xl md:text-4xl font-extrabold text-npu-gold-400 font-prompt"><span id="stat-employment" data-target="98" data-decimal="4">0.0</span>%</span>
-                    <span class="text-xs md:text-sm font-semibold text-slate-300 font-prompt mt-2" data-translate="stat-employ">อัตราการได้งานทำของบัณฑิต</span>
+                <!-- Stat 2 -->
+                <div class="flex flex-col">
+                    <span class="text-4xl md:text-5xl font-black text-ink-theme dark:text-white"><span id="stat-employment" data-target="98" data-decimal="4">0.0</span>%</span>
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-2" data-translate="stat-employ-tag">EMPLOYMENT RATE</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Values & Philosophy Section -->
-    <section id="about" class="py-24 px-6 md:px-12 bg-white dark:bg-slate-900 transition-colors duration-300">
-        <div class="container mx-auto max-w-6xl">
-            <!-- Section Title -->
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-npu-terracotta-500 dark:text-npu-gold-400 font-bold font-prompt text-xs md:text-sm uppercase tracking-widest" data-translate="about-badge">ปรัชญาและค่านิยมหลัก</span>
-                <h2 class="text-3xl md:text-5xl font-bold font-prompt text-slate-900 dark:text-white mt-3" data-translate="about-title">ก้าวไกล สู่อนาคตที่มั่นคง</h2>
-                <div class="h-1 bg-gradient-to-r from-npu-blue-900 via-npu-gold-500 to-npu-terracotta-600 w-24 mx-auto mt-4 rounded-full"></div>
+    <!-- Dean message and Full Modal Call -->
+    <section class="py-20 bg-card-theme dark:bg-slate-900/60 transition-colors duration-300 border-y border-slate-300/30 dark:border-slate-800/50">
+        <div class="max-w-4xl mx-auto px-6 text-center font-prompt flex flex-col items-center">
+            <span class="text-xs font-black uppercase tracking-widest text-artistic-emerald mb-4" data-translate="dean-badge">DEAN'S MESSAGE</span>
+            <h3 class="text-2xl md:text-3xl font-black text-ink-theme dark:text-white leading-snug max-w-2xl mb-6" data-translate="dean-header">"ผลิตบัณฑิตครูคุณภาพ มุ่งสู่ปัญญาพัฒนาท้องถิ่นลุ่มน้ำโขง"</h3>
+            <p class="text-sm font-sarabun text-slate-600 dark:text-slate-300 leading-relaxed italic max-w-3xl mb-8" data-translate="dean-excerpt">
+                "ยินดีต้อนรับนักศึกษาและทุกท่านเข้าสู่เว็บไซต์ของคณะครุศาสตร์ มหาวิทยาลัยนครพนม คณะครุศาสตร์แห่งนี้เป็นสถาบันผลิตครูที่มุ่งเน้นการปฏิรูปการศึกษา พัฒนาครูอย่างต่อเนื่องให้เป็นมืออาชีพที่เพียบพร้อมด้วยทักษะวิชาชีพ ความเป็นผู้นำ และคุณธรรมความดีงาม..."
+            </p>
+            <button onclick="openDeanModal()" class="px-6 py-3 bg-ink-theme dark:bg-artistic-yellow hover:bg-slate-900 dark:hover:bg-yellow-500 text-white dark:text-slate-950 font-bold text-xs font-prompt rounded-full shadow-md transition duration-300" data-translate="dean-btn-read">
+                อ่านสารจากคณบดีฉบับเต็ม (Read Full Message)
+            </button>
+        </div>
+    </section>
+
+    <!-- Timeline Experience Section (My Work Experience / Academic Journey) -->
+    <section class="py-24 px-6 md:px-12 w-full max-w-5xl mx-auto">
+        <!-- Section Title -->
+        <div class="text-center mb-16 font-prompt">
+            <span class="text-xs font-black uppercase tracking-widest text-artistic-terracotta mb-2 block" data-translate="time-badge">ACADEMIC JOURNEY</span>
+            <h2 class="text-3xl md:text-5xl font-black text-ink-theme dark:text-white" data-translate="time-title">ประวัติความเป็นมาของคณะ</h2>
+        </div>
+
+        <!-- Vertical Timeline Path -->
+        <div class="relative border-l-2 border-slate-300/50 dark:border-slate-800 pl-8 md:pl-12 space-y-12 max-w-3xl mx-auto font-prompt">
+            <!-- Timeline Item 1 -->
+            <div class="relative">
+                <!-- Bullet dot -->
+                <div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-6 h-6 rounded-full bg-artistic-emerald border-4 border-canvas-theme dark:border-canvas-dark flex items-center justify-center"></div>
+                <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                    <h4 class="text-lg font-bold text-ink-theme dark:text-white" data-translate="time1-role">ก่อตั้งตามมติสภามหาวิทยาลัย</h4>
+                    <span class="text-xs font-bold text-artistic-emerald bg-artistic-emerald/10 px-3 py-1 rounded-full mt-1 md:mt-0" data-translate="time1-period">1 ตุลาคม พ.ศ. 2558</span>
+                </div>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="time1-body">
+                    จัดตั้งขึ้นเพื่อแยกตัวการเรียนการสอนด้านการผลิตครูออกมาจากคณะศิลปศาสตร์และวิทยาศาสตร์ เพื่อให้เกิดความคล่องตัวในการบริการวิชาการและการจัดหลักสูตรครูที่ตรงเป้าหมาย
+                </p>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="relative">
+                <!-- Bullet dot -->
+                <div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-6 h-6 rounded-full bg-artistic-yellow border-4 border-canvas-theme dark:border-canvas-dark flex items-center justify-center"></div>
+                <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                    <h4 class="text-lg font-bold text-ink-theme dark:text-white" data-translate="time2-role">ขยายหลักสูตรบัณฑิตศึกษา (ปริญญาโท-เอก)</h4>
+                    <span class="text-xs font-bold text-artistic-yellow bg-artistic-yellow/10 dark:bg-artistic-yellow/20 px-3 py-1 rounded-full mt-1 md:mt-0" data-translate="time2-period">พ.ศ. 2561 - 2563</span>
+                </div>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="time2-body">
+                    เปิดสอนวิชาเฉพาะทางหลักสูตรและการสอน และการบริหารการศึกษาในระดับปริญญาโทและปริญญาเอก เพื่อพัฒนาผู้อำนวยการโรงเรียนและนักยุทธศาสตร์นโยบายการศึกษา
+                </p>
             </div>
 
-            <!-- Grid: Vision Statement & Core Values Card -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                <!-- Left Column: Inspiring Vision Card -->
-                <div class="glass-card p-8 md:p-12 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800 glow-blue transition duration-300 relative overflow-hidden group">
-                    <div class="absolute -right-16 -top-16 w-36 h-36 rounded-full bg-npu-blue-500/10 dark:bg-npu-blue-500/5 group-hover:scale-150 transition duration-500"></div>
-                    <div class="w-16 h-16 rounded-2xl bg-npu-blue-500/10 flex items-center justify-center text-npu-blue-800 dark:text-npu-blue-400 mb-8 shadow-sm">
-                        <i class="fa-solid fa-lightbulb text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold font-prompt text-slate-900 dark:text-white mb-4" data-translate="vision-title">วิสัยทัศน์ของคณะครุศาสตร์ (Vision)</h3>
-                    <p class="text-base md:text-lg font-sarabun text-slate-600 dark:text-slate-300 leading-relaxed" data-translate="vision-body">
-                        "คณะครุศาสตร์ มุ่งมั่นสู่การเป็นคณะชั้นนำแห่งการเรียนรู้ทางวิชาชีพครูและบุคลากรทางการศึกษาในระดับอนุภูมิภาคลุ่มน้ำโขง โดยมุ่งเน้นการผลิตบัณฑิตให้มีคุณภาพตามมาตรฐานวิชาชีพ บนฐานการเรียนรู้จากการปฏิบัติจริงและการบริการวิชาการ รวมถึงเป็นผู้มีคุณธรรมและจรรยาบรรณวิชาชีพตามความต้องการของสังคม"
-                    </p>
+            <!-- Timeline Item 3 -->
+            <div class="relative">
+                <!-- Bullet dot -->
+                <div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-6 h-6 rounded-full bg-artistic-terracotta border-4 border-canvas-theme dark:border-canvas-dark flex items-center justify-center"></div>
+                <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                    <h4 class="text-lg font-bold text-ink-theme dark:text-white" data-translate="time3-role">มุ่งสู่สากลและนวัตกรรมห้องเรียนยุคดิจิทัล</h4>
+                    <span class="text-xs font-bold text-artistic-terracotta bg-artistic-terracotta/10 px-3 py-1 rounded-full mt-1 md:mt-0" data-translate="time3-period">พ.ศ. 2567 - ปัจจุบัน</span>
                 </div>
-
-                <!-- Right Column: Mission Card -->
-                <div class="glass-card p-8 md:p-12 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800 glow-gold transition duration-300 relative overflow-hidden group">
-                    <div class="absolute -right-16 -top-16 w-36 h-36 rounded-full bg-npu-gold-500/10 dark:bg-npu-gold-500/5 group-hover:scale-150 transition duration-500"></div>
-                    <div class="w-16 h-16 rounded-2xl bg-npu-gold-500/10 flex items-center justify-center text-npu-gold-600 dark:text-npu-gold-400 mb-8 shadow-sm">
-                        <i class="fa-solid fa-bullseye text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold font-prompt text-slate-900 dark:text-white mb-4" data-translate="mission-title">พันธกิจหลัก (Missions)</h3>
-                    <ul class="space-y-4 font-sarabun text-slate-600 dark:text-slate-300">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-npu-terracotta-500 dark:text-npu-gold-400 mt-1 mr-3 flex-shrink-0"></i>
-                            <span data-translate="mission-1">ผลิตบัณฑิตครูและพัฒนาบุคลากรทางการศึกษาให้มีสมรรถนะวิชาชีพสูง ทันต่อการเปลี่ยนแปลงของสังคม</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-npu-terracotta-500 dark:text-npu-gold-400 mt-1 mr-3 flex-shrink-0"></i>
-                            <span data-translate="mission-2">วิจัยและพัฒนาองค์ความรู้ นวัตกรรมทางการศึกษาที่สอดคล้องกับความต้องการของท้องถิ่นเชิงพื้นที่</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-npu-terracotta-500 dark:text-npu-gold-400 mt-1 mr-3 flex-shrink-0"></i>
-                            <span data-translate="mission-3">บริการวิชาการแก่โรงเรียน ชุมชน เพื่อยกระดับและยั่งยืนในการพัฒนาการจัดการศึกษา</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Subsection: Core Values (EDU Framework) -->
-            <div class="mt-20">
-                <h3 class="text-center text-2xl font-bold font-prompt text-slate-900 dark:text-white mb-12 flex items-center justify-center" data-translate="edu-header">
-                    <span class="px-4 py-1.5 bg-gradient-to-r from-npu-blue-900 to-npu-terracotta-600 text-white rounded-xl shadow-md text-sm font-semibold tracking-wider mr-3">Core Values</span>
-                    ค่านิยมหลักขององค์กร "EDU"
-                </h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- E Card -->
-                    <div class="glass-card hover:bg-slate-100/50 dark:hover:bg-slate-800/40 rounded-3xl p-8 shadow-md border border-slate-100 dark:border-slate-800 text-center transform hover:-translate-y-2 transition-all duration-300 group">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-npu-blue-500 to-npu-blue-700 flex items-center justify-center text-white font-extrabold text-2xl mx-auto mb-6 shadow-md transform group-hover:rotate-12 transition">E</div>
-                        <h4 class="text-xl font-bold font-prompt text-slate-900 dark:text-white mb-3" data-translate="val-e-title">Empowerment</h4>
-                        <p class="text-sm font-sarabun text-slate-600 dark:text-slate-400 leading-relaxed" data-translate="val-e-body">การส่งเสริม พัฒนา และเสริมพลังทางปัญญา มอบโอกาสให้นักศึกษาดึงศักยภาพสูงสุดออกมาใช้ในการสร้างสรรค์วิชาการ</p>
-                    </div>
-                    <!-- D Card -->
-                    <div class="glass-card hover:bg-slate-100/50 dark:hover:bg-slate-800/40 rounded-3xl p-8 shadow-md border border-slate-100 dark:border-slate-800 text-center transform hover:-translate-y-2 transition-all duration-300 group">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-npu-gold-500 to-npu-gold-700 flex items-center justify-center text-white font-extrabold text-2xl mx-auto mb-6 shadow-md transform group-hover:scale-110 transition">D</div>
-                        <h4 class="text-xl font-bold font-prompt text-slate-900 dark:text-white mb-3" data-translate="val-d-title">Dedication</h4>
-                        <p class="text-sm font-sarabun text-slate-600 dark:text-slate-400 leading-relaxed" data-translate="val-d-body">ความทุ่มเท เสียสละ เอาใจใส่ในการทำงานและการเป็นครูผู้ให้การศึกษาด้วยจิตวิญญาณความเป็นครูอย่างจริงจัง</p>
-                    </div>
-                    <!-- U Card -->
-                    <div class="glass-card hover:bg-slate-100/50 dark:hover:bg-slate-800/40 rounded-3xl p-8 shadow-md border border-slate-100 dark:border-slate-800 text-center transform hover:-translate-y-2 transition-all duration-300 group">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-npu-terracotta-500 to-npu-terracotta-700 flex items-center justify-center text-white font-extrabold text-2xl mx-auto mb-6 shadow-md transform group-hover:-rotate-12 transition">U</div>
-                        <h4 class="text-xl font-bold font-prompt text-slate-900 dark:text-white mb-3" data-translate="val-u-title">Uniqueness</h4>
-                        <p class="text-sm font-sarabun text-slate-600 dark:text-slate-400 leading-relaxed" data-translate="val-u-body">ความโดดเด่น มีเอกลักษณ์เฉพาะตน มีทักษะภาคปฏิบัติที่แม่นยำ และมีความรู้ความเชี่ยวชาญสอดคล้องกับท้องถิ่นลุ่มน้ำโขง</p>
-                    </div>
-                </div>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="time3-body">
+                    ก้าวสู่การเป็นสถาบันชั้นนำในการผลิตและฝึกอบรมครูข้ามพรมแดนลุ่มแม่น้ำโขง พัฒนาจิตวิญญาณครูประยุกต์ทักษะ AI และสื่อความรู้ดิจิทัลเพื่อโรงเรียนท้องถิ่นอย่างยั่งยืน
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Dean's Welcome Message Section -->
-    <section class="py-20 px-6 md:px-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
-        <div class="container mx-auto max-w-6xl">
-            <div class="glass-card rounded-3xl p-8 md:p-14 shadow-lg border border-slate-200/60 dark:border-slate-800/60 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
-                <!-- Dean Portrait Column (Lg: 5 Cols) -->
-                <div class="lg:col-span-5 flex flex-col items-center">
-                    <div class="relative w-full max-w-[340px] aspect-square rounded-2xl overflow-hidden shadow-lg border-4 border-white dark:border-slate-800 group">
-                        <img src="assets/dean_portrait.png" alt="ผศ.ดร.เกรียงไกร ผาสุตะ" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80"></div>
-                        <!-- Tiny Overlay Info -->
-                        <div class="absolute bottom-4 left-4 right-4 text-white text-center font-prompt">
-                            <p class="text-xs font-medium text-npu-gold-300">Dean of Faculty of Education</p>
-                        </div>
-                    </div>
-                    <div class="text-center mt-6">
-                        <h4 class="text-lg md:text-xl font-bold font-prompt text-slate-950 dark:text-white" data-translate="dean-name">ผู้ช่วยศาสตราจารย์ ดร.เกรียงไกร ผาสุตะ</h4>
-                        <p class="text-xs md:text-sm font-semibold text-npu-terracotta-600 dark:text-npu-gold-400 font-prompt mt-1" data-translate="dean-role">คณบดีคณะครุศาสตร์ มหาวิทยาลัยนครพนม</p>
-                    </div>
-                </div>
-
-                <!-- Message Description Column (Lg: 7 Cols) -->
-                <div class="lg:col-span-7 flex flex-col items-start font-prompt">
-                    <span class="text-npu-blue-700 dark:text-npu-gold-400 font-bold uppercase tracking-wider text-xs md:text-sm mb-2" data-translate="dean-badge">สารจากคณบดี</span>
-                    <h3 class="text-3xl font-bold text-slate-950 dark:text-white leading-tight mb-6" data-translate="dean-header">"ผลิตบัณฑิตครูคุณภาพ มุ่งสู่ปัญญาพัฒนาท้องถิ่นลุ่มน้ำโขง"</h3>
-                    
-                    <div class="h-0.5 bg-gradient-to-r from-npu-gold-500 to-npu-terracotta-500 w-20 mb-8 rounded-full"></div>
-                    
-                    <p class="text-base font-sarabun text-slate-600 dark:text-slate-300 leading-relaxed mb-6 italic" data-translate="dean-excerpt">
-                        "ยินดีต้อนรับนักศึกษาและทุกท่านเข้าสู่เว็บไซต์ของคณะครุศาสตร์ มหาวิทยาลัยนครพนม คณะครุศาสตร์แห่งนี้เป็นสถาบันผลิตครูที่มุ่งเน้นการปฏิรูปการศึกษา พัฒนาครูอย่างต่อเนื่องให้เป็นมืออาชีพที่เพียบพร้อมด้วยทักษะวิชาชีพ ความเป็นผู้นำ และคุณธรรมความดีงาม..."
-                    </p>
-
-                    <!-- Interactive Action to Open Dean's Modal -->
-                    <button onclick="openDeanModal()" class="px-6 py-3 bg-npu-blue-900 hover:bg-npu-blue-800 dark:bg-npu-gold-600 dark:hover:bg-npu-gold-500 text-white dark:text-slate-950 font-bold text-sm font-prompt rounded-xl shadow-md transition transform hover:-translate-y-0.5" data-translate="dean-btn-read">
-                        อ่านสารจากคณบดีฉบับเต็ม
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Curriculum Section -->
-    <section id="curriculum" class="py-24 px-6 md:px-12 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <!-- Curriculums Dynamic Section -->
+    <section id="curriculum" class="py-24 px-6 md:px-12 bg-card-theme dark:bg-slate-900/40 transition-colors duration-300">
         <div class="container mx-auto max-w-6xl">
             <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-npu-terracotta-500 dark:text-npu-gold-400 font-bold font-prompt text-xs md:text-sm uppercase tracking-widest" data-translate="curr-badge">หลักสูตรที่เปิดสอน</span>
-                <h2 class="text-3xl md:text-5xl font-bold font-prompt text-slate-900 dark:text-white mt-3" data-translate="curr-title">หลักสูตรการศึกษาของเรา</h2>
-                <div class="h-1 bg-gradient-to-r from-npu-blue-900 via-npu-gold-500 to-npu-terracotta-600 w-24 mx-auto mt-4 rounded-full"></div>
+            <div class="text-center mb-16 font-prompt">
+                <span class="text-xs font-black uppercase tracking-widest text-artistic-emerald mb-2 block" data-translate="curr-badge">DEGREE FRAMEWORK</span>
+                <h2 class="text-3xl md:text-5xl font-black text-ink-theme dark:text-white" data-translate="curr-title">หลักสูตรการศึกษาของเรา</h2>
             </div>
 
-            <!-- Tab Switching Buttons -->
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 max-w-xl mx-auto mb-14 bg-slate-100 dark:bg-slate-800/60 p-2 rounded-2xl border border-slate-200 dark:border-slate-800">
-                <button onclick="switchTab('bachelor')" id="tab-btn-bachelor" class="w-full sm:w-auto px-6 py-3 font-prompt font-bold text-sm rounded-xl transition duration-300 bg-npu-blue-900 text-white shadow-md" data-translate="tab-bachelor">ปริญญาตรี (B.Ed.)</button>
-                <button onclick="switchTab('master')" id="tab-btn-master" class="w-full sm:w-auto px-6 py-3 font-prompt font-bold text-sm rounded-xl transition duration-300 text-slate-600 dark:text-slate-400 hover:bg-slate-200/55 dark:hover:bg-slate-800" data-translate="tab-master">ปริญญาโท (M.Ed.)</button>
-                <button onclick="switchTab('doctoral')" id="tab-btn-doctoral" class="w-full sm:w-auto px-6 py-3 font-prompt font-bold text-sm rounded-xl transition duration-300 text-slate-600 dark:text-slate-400 hover:bg-slate-200/55 dark:hover:bg-slate-800" data-translate="tab-doctoral">ปริญญาเอก (Ph.D. / Ed.D.)</button>
+            <!-- Tab Switching Buttons (Minimal capsule) -->
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2 max-w-xl mx-auto mb-14 bg-white dark:bg-slate-900 p-1.5 rounded-full border border-slate-300/30 dark:border-slate-800 shadow-sm">
+                <button onclick="switchTab('bachelor')" id="tab-btn-bachelor" class="w-full sm:w-auto px-6 py-2.5 font-prompt font-bold text-xs rounded-full transition duration-300 bg-ink-theme text-white dark:bg-artistic-yellow dark:text-slate-950 shadow-sm" data-translate="tab-bachelor">ปริญญาตรี (B.Ed.)</button>
+                <button onclick="switchTab('master')" id="tab-btn-master" class="w-full sm:w-auto px-6 py-2.5 font-prompt font-bold text-xs rounded-full transition duration-300 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" data-translate="tab-master">ปริญญาโท (M.Ed.)</button>
+                <button onclick="switchTab('doctoral')" id="tab-btn-doctoral" class="w-full sm:w-auto px-6 py-2.5 font-prompt font-bold text-xs rounded-full transition duration-300 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" data-translate="tab-doctoral">ปริญญาเอก (Ph.D. / Ed.D.)</button>
             </div>
 
-            <!-- Tab Content 1: Bachelor Degrees (9 Courses) -->
-            <div id="tab-content-bachelor" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Cards will be populated dynamically by JavaScript to allow seamless translation -->
-            </div>
-
-            <!-- Tab Content 2: Master Degrees (3 Courses) -->
-            <div id="tab-content-master" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
-                <!-- Cards populated dynamically by JS -->
-            </div>
-
-            <!-- Tab Content 3: Doctoral Degrees (2 Courses) -->
-            <div id="tab-content-doctoral" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
-                <!-- Cards populated dynamically by JS -->
-            </div>
+            <!-- Tab Contents -->
+            <div id="tab-content-bachelor" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <div id="tab-content-master" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden"></div>
+            <div id="tab-content-doctoral" class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden"></div>
         </div>
     </section>
 
-    <!-- Admission System Hub Section (TCAS & Tuition Estimator) -->
-    <section id="admission" class="py-24 px-6 md:px-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
-        <div class="container mx-auto max-w-6xl">
-            <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-npu-blue-700 dark:text-npu-gold-400 font-bold font-prompt text-xs md:text-sm uppercase tracking-widest" data-translate="adm-badge">ระบบรับสมัครนักศึกษาใหม่</span>
-                <h2 class="text-3xl md:text-5xl font-bold font-prompt text-slate-900 dark:text-white mt-3" data-translate="adm-title">พร้อมร่วมเดินทางไปกับเราหรือยัง?</h2>
-                <div class="h-1 bg-gradient-to-r from-npu-blue-900 via-npu-gold-500 to-npu-terracotta-600 w-24 mx-auto mt-4 rounded-full"></div>
+    <!-- Admission & Tuition Calculators -->
+    <section id="admission" class="py-24 px-6 md:px-12 w-full max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16 font-prompt">
+            <span class="text-xs font-black uppercase tracking-widest text-artistic-terracotta mb-2 block" data-translate="adm-badge">ADMISSION SYSTEM</span>
+            <h2 class="text-3xl md:text-5xl font-black text-ink-theme dark:text-white" data-translate="adm-title">พร้อมสมัครเรียนแล้วหรือยัง?</h2>
+        </div>
+
+        <!-- TCAS Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            <!-- Step 1 -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-6 border border-slate-300/30 dark:border-slate-800 text-center relative overflow-hidden group">
+                <div class="absolute -right-4 -top-4 w-12 h-12 bg-ink-theme/5 dark:bg-white/5 rounded-full font-black text-xl flex items-center justify-center text-slate-400 dark:text-slate-600">1</div>
+                <h4 class="text-base font-bold font-prompt text-ink-theme dark:text-artistic-yellow mb-1" data-translate="adm-r1-title">TCAS รอบที่ 1 Portfolio</h4>
+                <p class="text-[10px] font-bold text-artistic-terracotta mb-3 font-prompt" data-translate="adm-r1-period">ช่วงรับสมัคร: พ.ย. - ม.ค.</p>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r1-body">พิจารณาประวัติการเรียน ผลงานทางวิชาการ กิจกรรม และความสามารถพิเศษ ไม่ต้องสอบข้อเขียน</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-6 border border-slate-300/30 dark:border-slate-800 text-center relative overflow-hidden group">
+                <div class="absolute -right-4 -top-4 w-12 h-12 bg-ink-theme/5 dark:bg-white/5 rounded-full font-black text-xl flex items-center justify-center text-slate-400 dark:text-slate-600">2</div>
+                <h4 class="text-base font-bold font-prompt text-ink-theme dark:text-artistic-yellow mb-1" data-translate="adm-r2-title">TCAS รอบที่ 2 Quota</h4>
+                <p class="text-[10px] font-bold text-artistic-terracotta mb-3 font-prompt" data-translate="adm-r2-period">ช่วงรับสมัคร: ก.พ. - เม.ย.</p>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r2-body">โควตาสำหรับผู้เรียนในพื้นที่ 17 จังหวัดภาคตะวันออกเฉียงเหนือ โครงการครูท้องถิ่น และโรงเรียนเครือข่าย</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-6 border border-slate-300/30 dark:border-slate-800 text-center relative overflow-hidden group">
+                <div class="absolute -right-4 -top-4 w-12 h-12 bg-ink-theme/5 dark:bg-white/5 rounded-full font-black text-xl flex items-center justify-center text-slate-400 dark:text-slate-600">3</div>
+                <h4 class="text-base font-bold font-prompt text-ink-theme dark:text-artistic-yellow mb-1" data-translate="adm-r3-title">TCAS รอบที่ 3 Admission</h4>
+                <p class="text-[10px] font-bold text-artistic-terracotta mb-3 font-prompt" data-translate="adm-r3-period">ช่วงรับสมัคร: พ.ค.</p>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r3-body">ระบบการรับตรงร่วมกันระดับประเทศ สมัครผ่านเว็บ MyTCAS วัดผลสอบทางวิชาการทั่วไปและวิชาชีพครู (TPAT5)</p>
+            </div>
+            <!-- Step 4 -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-6 border border-slate-300/30 dark:border-slate-800 text-center relative overflow-hidden group">
+                <div class="absolute -right-4 -top-4 w-12 h-12 bg-ink-theme/5 dark:bg-white/5 rounded-full font-black text-xl flex items-center justify-center text-slate-400 dark:text-slate-600">4</div>
+                <h4 class="text-base font-bold font-prompt text-ink-theme dark:text-artistic-yellow mb-1" data-translate="adm-r4-title">TCAS รอบที่ 4 Direct</h4>
+                <p class="text-[10px] font-bold text-artistic-terracotta mb-3 font-prompt" data-translate="adm-r4-period">ช่วงรับสมัคร: มิ.ย.</p>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r4-body">รับตรงอิสระผ่านระบบมหาวิทยาลัยโดยตรง สำหรับผู้ที่ยังไม่ได้ยืนยันสิทธิ์ในรอบก่อนหน้า</p>
+            </div>
+        </div>
+
+        <!-- Tuition Estimator Card -->
+        <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-300/30 dark:border-slate-800 max-w-4xl mx-auto shadow-sm">
+            <div class="text-center mb-8 font-prompt">
+                <h3 class="text-xl md:text-2xl font-bold text-ink-theme dark:text-white" data-translate="calc-title">คำนวณจำลองประมาณการค่าธรรมเนียมการศึกษา</h3>
+                <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 mt-1" data-translate="calc-subtitle">จำลองการประเมินค่าใช้จ่ายค่าเล่าเรียนเบื้องต้นของคณะครุศาสตร์ เพื่อการวางแผนการศึกษา</p>
             </div>
 
-            <!-- TCAS Step by Step Path -->
-            <div class="mb-20">
-                <h3 class="text-xl font-bold font-prompt text-slate-950 dark:text-white mb-10 text-center flex items-center justify-center" data-translate="adm-tcas-header">
-                    <i class="fa-solid fa-graduation-cap text-npu-terracotta-500 dark:text-npu-gold-400 mr-3 text-xl"></i>
-                    รอบการรับสมัครเรียนระดับปริญญาตรี (TCAS NPU)
-                </h3>
-                
-                <!-- Steps Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Step 1 -->
-                    <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 w-12 h-12 bg-npu-blue-900/5 dark:bg-white/5 rounded-full font-extrabold text-2xl flex items-center justify-center text-slate-400 dark:text-slate-600">1</div>
-                        <h4 class="text-lg font-bold font-prompt text-npu-blue-900 dark:text-npu-gold-400 mb-2" data-translate="adm-r1-title">TCAS รอบที่ 1 Portfolio</h4>
-                        <p class="text-xs font-semibold text-npu-terracotta-600 dark:text-npu-gold-300 font-prompt mb-3" data-translate="adm-r1-period">ช่วงรับสมัคร: พ.ย. - ม.ค.</p>
-                        <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r1-body">พิจารณาประวัติการเรียน ผลงานทางวิชาการ กิจกรรม และความสามารถพิเศษ ไม่ต้องสอบข้อเขียน</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center font-prompt">
+                <!-- Inputs -->
+                <div class="space-y-4">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-bold text-slate-500 uppercase mb-1.5" data-translate="calc-label-lvl">เลือกระดับการศึกษา</label>
+                        <select id="calc-lvl" onchange="updateCalcPrograms()" class="w-full px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-300/40 dark:border-slate-700 rounded-xl focus:ring-1 focus:ring-artistic-emerald focus:outline-none text-xs transition">
+                            <option value="bachelor" data-translate="lvl-opt-bachelor">ปริญญาตรี (หลักสูตร 4 ปี)</option>
+                            <option value="master" data-translate="lvl-opt-master">ปริญญาโท (หลักสูตร 2 ปี)</option>
+                            <option value="doctoral" data-translate="lvl-opt-doctoral">ปริญญาเอก</option>
+                        </select>
                     </div>
-                    <!-- Step 2 -->
-                    <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 w-12 h-12 bg-npu-blue-900/5 dark:bg-white/5 rounded-full font-extrabold text-2xl flex items-center justify-center text-slate-400 dark:text-slate-600">2</div>
-                        <h4 class="text-lg font-bold font-prompt text-npu-blue-900 dark:text-npu-gold-400 mb-2" data-translate="adm-r2-title">TCAS รอบที่ 2 Quota</h4>
-                        <p class="text-xs font-semibold text-npu-terracotta-600 dark:text-npu-gold-300 font-prompt mb-3" data-translate="adm-r2-period">ช่วงรับสมัคร: ก.พ. - เม.ย.</p>
-                        <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r2-body">โควตาสำหรับผู้เรียนในพื้นที่ 17 จังหวัดภาคตะวันออกเฉียงเหนือ โครงการครูท้องถิ่น และโรงเรียนเครือข่าย</p>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-bold text-slate-500 uppercase mb-1.5" data-translate="calc-label-prog">เลือกสาขาวิชา</label>
+                        <select id="calc-prog" onchange="calculateFee()" class="w-full px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-300/40 dark:border-slate-700 rounded-xl focus:ring-1 focus:ring-artistic-emerald focus:outline-none text-xs transition">
+                        </select>
                     </div>
-                    <!-- Step 3 -->
-                    <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 w-12 h-12 bg-npu-blue-900/5 dark:bg-white/5 rounded-full font-extrabold text-2xl flex items-center justify-center text-slate-400 dark:text-slate-600">3</div>
-                        <h4 class="text-lg font-bold font-prompt text-npu-blue-900 dark:text-npu-gold-400 mb-2" data-translate="adm-r3-title">TCAS รอบที่ 3 Admission</h4>
-                        <p class="text-xs font-semibold text-npu-terracotta-600 dark:text-npu-gold-300 font-prompt mb-3" data-translate="adm-r3-period">ช่วงรับสมัคร: พ.ค.</p>
-                        <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r3-body">ระบบการรับตรงร่วมกันระดับประเทศ สมัครผ่านเว็บ MyTCAS วัดผลสอบทางวิชาการทั่วไปและวิชาชีพครู (TPAT5)</p>
-                    </div>
-                    <!-- Step 4 -->
-                    <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 w-12 h-12 bg-npu-blue-900/5 dark:bg-white/5 rounded-full font-extrabold text-2xl flex items-center justify-center text-slate-400 dark:text-slate-600">4</div>
-                        <h4 class="text-lg font-bold font-prompt text-npu-blue-900 dark:text-npu-gold-400 mb-2" data-translate="adm-r4-title">TCAS รอบที่ 4 Direct</h4>
-                        <p class="text-xs font-semibold text-npu-terracotta-600 dark:text-npu-gold-300 font-prompt mb-3" data-translate="adm-r4-period">ช่วงรับสมัคร: มิ.ย.</p>
-                        <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed" data-translate="adm-r4-body">รับตรงอิสระผ่านระบบมหาวิทยาลัยโดยตรง สำหรับผู้ที่ยังไม่ได้ยืนยันสิทธิ์ในรอบก่อนหน้า</p>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-bold text-slate-500 uppercase mb-1.5" data-translate="calc-label-sem">ประเภทของภาคการศึกษา</label>
+                        <select id="calc-sem" onchange="calculateFee()" class="w-full px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-300/40 dark:border-slate-700 rounded-xl focus:ring-1 focus:ring-artistic-emerald focus:outline-none text-xs transition">
+                            <option value="regular" data-translate="sem-opt-reg">ภาคการศึกษาปกติ (Regular Semester)</option>
+                            <option value="special" data-translate="sem-opt-spec">ภาคการศึกษาพิเศษ/เสาร์-อาทิตย์ (Special Semester)</option>
+                        </select>
                     </div>
                 </div>
-            </div>
 
-            <!-- Tuition Fee Calculator Section (WOW Interactive Feature) -->
-            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200 dark:border-slate-800 max-w-4xl mx-auto">
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold font-prompt text-slate-950 dark:text-white" data-translate="calc-title">คำนวณจำลองประมาณการค่าธรรมเนียมการศึกษา</h3>
-                    <p class="text-sm font-sarabun text-slate-500 dark:text-slate-400 mt-2" data-translate="calc-subtitle">จำลองการประเมินค่าใช้จ่ายค่าเล่าเรียนเบื้องต้นของคณะครุศาสตร์ เพื่อการวางแผนการศึกษา</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <!-- Calculator Inputs -->
-                    <div class="space-y-5 font-prompt">
-                        <!-- Select Level -->
-                        <div class="flex flex-col">
-                            <label class="text-xs font-bold text-slate-600 dark:text-slate-400 mb-2" data-translate="calc-label-lvl">เลือกระดับการศึกษา</label>
-                            <select id="calc-lvl" onchange="updateCalcPrograms()" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-npu-blue-500 focus:outline-none transition">
-                                <option value="bachelor" data-translate="lvl-opt-bachelor">ปริญญาตรี (หลักสูตร 4 ปี)</option>
-                                <option value="master" data-translate="lvl-opt-master">ปริญญาโท (หลักสูตร 2 ปี)</option>
-                                <option value="doctoral" data-translate="lvl-opt-doctoral">ปริญญาเอก</option>
-                            </select>
-                        </div>
-                        <!-- Select Program -->
-                        <div class="flex flex-col">
-                            <label class="text-xs font-bold text-slate-600 dark:text-slate-400 mb-2" data-translate="calc-label-prog">เลือกสาขาวิชา</label>
-                            <select id="calc-prog" onchange="calculateFee()" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-npu-blue-500 focus:outline-none transition">
-                                <!-- Populated dynamically by JS -->
-                            </select>
-                        </div>
-                        <!-- Select Semester Type -->
-                        <div class="flex flex-col">
-                            <label class="text-xs font-bold text-slate-600 dark:text-slate-400 mb-2" data-translate="calc-label-sem">ประเภทของภาคการศึกษา</label>
-                            <select id="calc-sem" onchange="calculateFee()" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-npu-blue-500 focus:outline-none transition">
-                                <option value="regular" data-translate="sem-opt-reg">ภาคการศึกษาปกติ (Regular Semester)</option>
-                                <option value="special" data-translate="sem-opt-spec">ภาคการศึกษาพิเศษ/เสาร์-อาทิตย์ (Special Semester)</option>
-                            </select>
-                        </div>
+                <!-- Output Display Card -->
+                <div class="bg-ink-theme text-white rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-md border border-white/5 relative overflow-hidden group">
+                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-white/5 rounded-full group-hover:scale-150 transition duration-500"></div>
+                    <span class="text-[10px] font-bold text-artistic-yellow uppercase tracking-widest mb-1.5" data-translate="calc-out-header">ประมาณการค่าเทอมต่อเทอม</span>
+                    <div class="flex items-baseline mb-1">
+                        <span class="text-4xl font-black text-white mr-1.5" id="calc-fee-val">0</span>
+                        <span class="text-xs font-semibold text-slate-300" data-translate="currency-baht">บาท</span>
                     </div>
-
-                    <!-- Calculator Output Card -->
-                    <div class="bg-gradient-to-tr from-npu-blue-900 to-slate-900 text-white rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-lg border border-white/10 relative overflow-hidden group">
-                        <div class="absolute -right-8 -top-8 w-24 h-24 bg-npu-gold-500/10 rounded-full group-hover:scale-150 transition duration-500"></div>
-                        
-                        <span class="text-xs font-bold font-prompt text-npu-gold-300 uppercase tracking-widest mb-2" data-translate="calc-out-header">ประมาณการค่าเทอมต่อเทอม</span>
-                        <div class="flex items-baseline font-prompt mb-1">
-                            <span class="text-4xl md:text-5xl font-extrabold text-white mr-2" id="calc-fee-val">0</span>
-                            <span class="text-sm font-semibold text-slate-300" data-translate="currency-baht">บาท</span>
+                    <p class="text-[10px] font-sarabun text-slate-400 mt-1 mb-5" data-translate="calc-notice">*เป็นค่าประมาณการ อาจมีการปรับเปลี่ยนตามประกาศของมหาวิทยาลัย</p>
+                    <div class="w-full h-px bg-white/10 mb-4"></div>
+                    <div class="w-full grid grid-cols-2 gap-4 text-left">
+                        <div>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase" data-translate="calc-total-lbl">รวมตลอดหลักสูตร</p>
+                            <p class="text-sm font-bold text-white mt-0.5"><span id="calc-total-val">0</span> บาท</p>
                         </div>
-                        <p class="text-xs font-sarabun text-slate-400 mt-2 mb-6" data-translate="calc-notice">*เป็นค่าประมาณการ อาจมีการปรับเปลี่ยนตามประกาศของมหาวิทยาลัย</p>
-                        
-                        <div class="w-full h-px bg-white/20 mb-5"></div>
-                        
-                        <div class="w-full grid grid-cols-2 gap-4 text-left font-prompt">
-                            <div>
-                                <p class="text-[10px] font-bold text-slate-400 uppercase" data-translate="calc-total-lbl">รวมตลอดหลักสูตร</p>
-                                <p class="text-base font-bold text-white mt-0.5"><span id="calc-total-val">0</span> บาท</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-slate-400 uppercase" data-translate="calc-sch-lbl">สิทธิ์ทุนการศึกษา</p>
-                                <p class="text-xs font-bold text-npu-gold-300 mt-1" data-translate="calc-sch-val">กยศ. / กอศ. / ทุนเรียนดี</p>
-                            </div>
+                        <div>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase" data-translate="calc-sch-lbl">สิทธิ์ทุนการศึกษา</p>
+                            <p class="text-[10px] font-bold text-artistic-yellow mt-0.5" data-translate="calc-sch-val">กยศ. / กอศ. / ทุนเรียนดี</p>
                         </div>
                     </div>
                 </div>
@@ -532,54 +449,45 @@
         </div>
     </section>
 
-    <!-- News & Events Section -->
-    <section id="news" class="py-24 px-6 md:px-12 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <!-- News & Activities (My Latest Works Flat Style) -->
+    <section id="news" class="py-24 px-6 md:px-12 bg-card-theme dark:bg-slate-900/60 transition-colors duration-300">
         <div class="container mx-auto max-w-6xl">
-            <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-npu-terracotta-500 dark:text-npu-gold-400 font-bold font-prompt text-xs md:text-sm uppercase tracking-widest" data-translate="news-badge">ข่าวสารและกิจกรรม</span>
-                <h2 class="text-3xl md:text-5xl font-bold font-prompt text-slate-900 dark:text-white mt-3" data-translate="news-title">ข่าวประชาสัมพันธ์ล่าสุด</h2>
-                <div class="h-1 bg-gradient-to-r from-npu-blue-900 via-npu-gold-500 to-npu-terracotta-600 w-24 mx-auto mt-4 rounded-full"></div>
+            <!-- Header -->
+            <div class="text-center mb-16 font-prompt">
+                <span class="text-xs font-black uppercase tracking-widest text-artistic-emerald mb-2 block" data-translate="news-badge">MY LATEST WORKS</span>
+                <h2 class="text-3xl md:text-5xl font-black text-ink-theme dark:text-white" data-translate="news-title">ข่าวประชาสัมพันธ์ล่าสุด</h2>
             </div>
 
-            <!-- News Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- News Item 1 -->
-                <div class="glass-card rounded-3xl overflow-hidden shadow-md border border-slate-100 dark:border-slate-800 group hover:shadow-lg transition duration-300 flex flex-col lg:flex-row">
-                    <!-- Image -->
-                    <div class="lg:w-2/5 aspect-[4/3] lg:aspect-auto overflow-hidden relative">
-                        <img src="assets/campus_life_1.png" alt="ข่าววิชาการ" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-npu-blue-900 text-white text-[10px] font-bold font-prompt rounded-full" data-translate="tag-academic">วิชาการ</span>
+            <!-- Custom Flat Cards Grid (Mockup-like warmth) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- News 1 -->
+                <div class="bg-canvas-theme dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-300/30 dark:border-slate-800 shadow-sm group hover:shadow-md transition duration-300">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="assets/campus_life_1.png" alt="ข่าวประชาสัมพันธ์" class="w-full h-full object-cover transform group-hover:scale-[1.01] transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-artistic-emerald text-white text-[9px] font-bold font-prompt rounded-full" data-translate="tag-academic">วิชาการ</span>
                     </div>
-                    <!-- Details -->
-                    <div class="p-6 md:p-8 lg:w-3/5 flex flex-col justify-between">
-                        <div class="font-prompt">
-                            <span class="text-xs font-semibold text-slate-400 block mb-2"><i class="fa-regular fa-calendar-check mr-2"></i>25 พฤษภาคม 2026</span>
-                            <h4 class="text-lg font-bold text-slate-950 dark:text-white mb-3 group-hover:text-npu-terracotta-600 transition" data-translate="news1-title">คณะครุศาสตร์ จัดการประชุมวิชาการระดับชาติว่าด้วยนวัตกรรมการศึกษาลุ่มน้ำโขง ครั้งที่ 9</h4>
-                            <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed mb-4" data-translate="news1-excerpt">การรวบรวมงานวิจัย ผลงานนวัตกรรมทางการเรียนรู้ของนักวิจัยและคณาจารย์จากทั่วประเทศ เพื่อยกระดับหลักสูตรการสอนโรงเรียนในอนุภูมิภาคลุ่มน้ำโขง...</p>
-                        </div>
-                        <button onclick="alert('แสดงระบบข่าวประชาสัมพันธ์ตัวเต็ม')" class="text-xs font-bold font-prompt text-npu-blue-800 dark:text-npu-gold-400 hover:text-npu-terracotta-600 flex items-center transition">
+                    <div class="p-8 font-prompt">
+                        <span class="text-xs text-slate-400 font-medium block mb-2"><i class="fa-regular fa-calendar mr-1.5"></i>25 พฤษภาคม 2026</span>
+                        <h4 class="text-lg font-bold text-ink-theme dark:text-white mb-3 group-hover:text-artistic-emerald transition leading-snug" data-translate="news1-title">คณะครุศาสตร์ จัดการประชุมวิชาการระดับชาติว่าด้วยนวัตกรรมการศึกษาลุ่มน้ำโขง ครั้งที่ 9</h4>
+                        <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed mb-6" data-translate="news1-excerpt">การรวบรวมงานวิจัย ผลงานนวัตกรรมทางการเรียนรู้ของนักวิจัยและคณาจารย์จากทั่วประเทศ เพื่อยกระดับหลักสูตรการสอนโรงเรียนในอนุภูมิภาคลุ่มน้ำโขง...</p>
+                        <button onclick="alert('แสดงระบบข่าวประชาสัมพันธ์ตัวเต็ม')" class="text-xs font-bold text-ink-theme dark:text-artistic-yellow hover:text-artistic-emerald flex items-center transition">
                             <span data-translate="btn-news-read">อ่านรายละเอียดข่าว</span>
                             <i class="fa-solid fa-arrow-right-long ml-2"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- News Item 2 -->
-                <div class="glass-card rounded-3xl overflow-hidden shadow-md border border-slate-100 dark:border-slate-800 group hover:shadow-lg transition duration-300 flex flex-col lg:flex-row">
-                    <!-- Image -->
-                    <div class="lg:w-2/5 aspect-[4/3] lg:aspect-auto overflow-hidden relative">
-                        <img src="assets/campus_life_2.png" alt="ข่าวกิจกรรม" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-npu-terracotta-600 text-white text-[10px] font-bold font-prompt rounded-full" data-translate="tag-activity">ข่าวกิจกรรม</span>
+                <!-- News 2 -->
+                <div class="bg-canvas-theme dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-300/30 dark:border-slate-800 shadow-sm group hover:shadow-md transition duration-300">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="assets/campus_life_2.png" alt="ข่าวกิจกรรม" class="w-full h-full object-cover transform group-hover:scale-[1.01] transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-artistic-terracotta text-white text-[9px] font-bold font-prompt rounded-full" data-translate="tag-activity">ข่าวกิจกรรม</span>
                     </div>
-                    <!-- Details -->
-                    <div class="p-6 md:p-8 lg:w-3/5 flex flex-col justify-between">
-                        <div class="font-prompt">
-                            <span class="text-xs font-semibold text-slate-400 block mb-2"><i class="fa-regular fa-calendar-check mr-2"></i>20 พฤษภาคม 2026</span>
-                            <h4 class="text-lg font-bold text-slate-950 dark:text-white mb-3 group-hover:text-npu-terracotta-600 transition" data-translate="news2-title">กิจกรรมเตรียมความพร้อมวิชาชีพครูสู่ยุคดิจิทัล สำหรับนักศึกษาฝึกอบรมการสอนในสถานศึกษาจริง</h4>
-                            <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed mb-4" data-translate="news2-excerpt">เตรียมความพร้อมทักษะจิตวิญญาณความเป็นครูและทักษะประยุกต์ใช้เทคโนโลยี AI เพื่อสนับสนุนการจัดการคลาสเรียนอย่างมีความสุขสร้างสรรค์...</p>
-                        </div>
-                        <button onclick="alert('แสดงระบบข่าวประชาสัมพันธ์ตัวเต็ม')" class="text-xs font-bold font-prompt text-npu-blue-800 dark:text-npu-gold-400 hover:text-npu-terracotta-600 flex items-center transition">
+                    <div class="p-8 font-prompt">
+                        <span class="text-xs text-slate-400 font-medium block mb-2"><i class="fa-regular fa-calendar mr-1.5"></i>20 พฤษภาคม 2026</span>
+                        <h4 class="text-lg font-bold text-ink-theme dark:text-white mb-3 group-hover:text-artistic-emerald transition leading-snug" data-translate="news2-title">กิจกรรมเตรียมความพร้อมวิชาชีพครูสู่ยุคดิจิทัล สำหรับนักศึกษาฝึกอบรมการสอนในสถานศึกษาจริง</h4>
+                        <p class="text-xs font-sarabun text-slate-500 dark:text-slate-400 leading-relaxed mb-6" data-translate="news2-excerpt">เตรียมความพร้อมทักษะจิตวิญญาณความเป็นครูและทักษะประยุกต์ใช้เทคโนโลยี AI เพื่อสนับสนุนการจัดการคลาสเรียนอย่างมีความสุขสร้างสรรค์...</p>
+                        <button onclick="alert('แสดงระบบข่าวประชาสัมพันธ์ตัวเต็ม')" class="text-xs font-bold text-ink-theme dark:text-artistic-yellow hover:text-artistic-emerald flex items-center transition">
                             <span data-translate="btn-news-read">อ่านรายละเอียดข่าว</span>
                             <i class="fa-solid fa-arrow-right-long ml-2"></i>
                         </button>
@@ -589,99 +497,125 @@
         </div>
     </section>
 
-    <!-- Contact & Location Section -->
-    <section id="contact" class="py-24 px-6 md:px-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
-        <div class="container mx-auto max-w-6xl">
-            <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-npu-blue-700 dark:text-npu-gold-400 font-bold font-prompt text-xs md:text-sm uppercase tracking-widest" data-translate="con-badge">ติดต่อคณะของเรา</span>
-                <h2 class="text-3xl md:text-5xl font-bold font-prompt text-slate-900 dark:text-white mt-3" data-translate="con-title">ช่องทางการติดต่อ</h2>
-                <div class="h-1 bg-gradient-to-r from-npu-blue-900 via-npu-gold-500 to-npu-terracotta-600 w-24 mx-auto mt-4 rounded-full"></div>
-            </div>
+    <!-- Testimonials Section (People Talk About Us) -->
+    <section class="py-24 px-6 md:px-12 w-full max-w-5xl mx-auto">
+        <div class="text-center mb-16 font-prompt">
+            <span class="text-xs font-black uppercase tracking-widest text-artistic-yellow mb-2 block" data-translate="test-badge">PEOPLE TALK ABOUT US</span>
+            <h2 class="text-3xl md:text-5xl font-black text-ink-theme dark:text-white" data-translate="test-title">เสียงสะท้อนจากความสำเร็จ</h2>
+        </div>
 
-            <!-- Contact Grid Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch font-prompt">
-                <!-- Info Column (Lg: 4 Cols) -->
-                <div class="lg:col-span-4 bg-gradient-to-br from-npu-blue-900 to-slate-900 text-white rounded-3xl p-8 flex flex-col justify-between shadow-lg border border-white/5 relative overflow-hidden group">
-                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-npu-gold-500/10 rounded-full group-hover:scale-150 transition duration-500"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-8 border border-slate-300/30 dark:border-slate-800 flex flex-col justify-between shadow-sm relative">
+                <i class="fa-solid fa-quote-left text-3xl text-slate-300 dark:text-slate-800 absolute top-6 right-8"></i>
+                <p class="text-xs font-sarabun text-slate-600 dark:text-slate-300 leading-relaxed mb-6 italic" data-translate="t1-body">
+                    "การเรียนการสอนครูที่นี่เน้นการจับคู่และฝึกอบรมในสถาบันการศึกษาจริง คณาจารย์มีความทุ่มเทและดูแลอย่างใกล้ชิด อุปกรณ์เทคโนโลยีช่วยให้ฉันสามารถจัดบทเรียนสมัยใหม่ได้เก่งมากค่ะ"
+                </p>
+                <div class="flex items-center space-x-3.5 pt-4 border-t border-slate-300/20 dark:border-slate-800/80 font-prompt">
+                    <div class="w-10 h-10 rounded-full bg-artistic-emerald/20 flex items-center justify-center text-artistic-emerald font-bold text-sm"><i class="fa-solid fa-user-graduate"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-8" data-translate="con-info-hdr">สำนักงานสำนักงานคณบดี</h3>
+                        <h5 class="text-xs font-bold text-ink-theme dark:text-white" data-translate="t1-name">ศรัญญา คนดี</h5>
+                        <p class="text-[9px] text-slate-400 font-medium" data-translate="t1-role">บัณฑิตครูภาษาไทยรุ่นที่ 7 | ปัจจุบันครูประจำการรัฐบาล</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="bg-card-theme dark:bg-slate-900 rounded-3xl p-8 border border-slate-300/30 dark:border-slate-800 flex flex-col justify-between shadow-sm relative">
+                <i class="fa-solid fa-quote-left text-3xl text-slate-300 dark:text-slate-800 absolute top-6 right-8"></i>
+                <p class="text-xs font-sarabun text-slate-600 dark:text-slate-300 leading-relaxed mb-6 italic" data-translate="t2-body">
+                    "หลักสูตรปริญญาเอกสาขาหลักสูตรและการสอนขัดเกลาวิสัยทัศน์ทางวิชาการเชิงลุ่มน้ำโขงได้ลุ่มลึกมาก ระบบจัดสอบวิจัยทำได้โปร่งใสและท้าทาย ช่วยเสริมภาวะผู้นำทางนวัตกรรมอย่างยอดเยี่ยม"
+                </p>
+                <div class="flex items-center space-x-3.5 pt-4 border-t border-slate-300/20 dark:border-slate-800/80 font-prompt">
+                    <div class="w-10 h-10 rounded-full bg-artistic-yellow/20 flex items-center justify-center text-artistic-yellow font-bold text-sm"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div>
+                        <h5 class="text-xs font-bold text-ink-theme dark:text-white" data-translate="t2-name">ดร.ธวัชชัย มีชัย</h5>
+                        <p class="text-[9px] text-slate-400 font-medium" data-translate="t2-role">ศิษย์เก่า ปร.ด. หลักสูตรและการสอน | ปัจจุบันผู้อำนวยการโรงเรียนมัธยม</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-24 px-6 md:px-12 bg-card-theme dark:bg-slate-900/60 transition-colors duration-300">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Header -->
+            <div class="text-center mb-16 font-prompt">
+                <span class="text-xs font-black uppercase tracking-widest text-artistic-terracotta mb-2 block" data-translate="con-badge">CONTACT US</span>
+                <h2 class="text-3xl md:text-5xl font-black text-ink-theme dark:text-white" data-translate="con-title">ช่องทางการติดต่อ</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch font-prompt">
+                <!-- Info Column (Lg: 4 Cols) -->
+                <div class="lg:col-span-4 bg-ink-theme text-white rounded-3xl p-8 flex flex-col justify-between shadow-md relative overflow-hidden group">
+                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-white/5 rounded-full group-hover:scale-150 transition duration-500"></div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-8" data-translate="con-info-hdr">สำนักงานคณบดี คณะครุศาสตร์</h3>
                         
-                        <div class="space-y-6 font-sarabun text-sm text-slate-200">
-                            <!-- Info 1 -->
+                        <div class="space-y-6 font-sarabun text-xs text-slate-300">
                             <div class="flex items-start">
-                                <i class="fa-solid fa-map-location-dot text-npu-gold-400 text-lg mr-4 mt-1 flex-shrink-0"></i>
+                                <i class="fa-solid fa-location-dot text-artistic-yellow text-base mr-3.5 mt-0.5 flex-shrink-0"></i>
                                 <div>
-                                    <p class="font-bold text-xs uppercase tracking-wider text-slate-400 font-prompt" data-translate="con-lbl-addr">ที่ตั้งสำนักงาน</p>
+                                    <p class="font-bold text-[9px] uppercase tracking-wider text-slate-400 font-prompt" data-translate="con-lbl-addr">ที่ตั้งสำนักงาน</p>
                                     <p class="mt-1 leading-relaxed" data-translate="con-val-addr">เลขที่ 167/1 หมู่ 8 บ้านเนินสะอาด ตำบลนาราชควาย อำเภอเมือง จังหวัดนครพนม 48000</p>
                                 </div>
                             </div>
-                            <!-- Info 2 -->
                             <div class="flex items-start">
-                                <i class="fa-solid fa-phone-volume text-npu-gold-400 text-lg mr-4 mt-1 flex-shrink-0"></i>
+                                <i class="fa-solid fa-phone text-artistic-yellow text-base mr-3.5 mt-0.5 flex-shrink-0"></i>
                                 <div>
-                                    <p class="font-bold text-xs uppercase tracking-wider text-slate-400 font-prompt" data-translate="con-lbl-phone">โทรศัพท์</p>
+                                    <p class="font-bold text-[9px] uppercase tracking-wider text-slate-400 font-prompt" data-translate="con-lbl-phone">โทรศัพท์</p>
                                     <p class="mt-1">0 4258 7181 / 0 4258 7205</p>
                                 </div>
                             </div>
-                            <!-- Info 3 -->
                             <div class="flex items-start">
-                                <i class="fa-solid fa-envelope-open-text text-npu-gold-400 text-lg mr-4 mt-1 flex-shrink-0"></i>
+                                <i class="fa-solid fa-envelope text-artistic-yellow text-base mr-3.5 mt-0.5 flex-shrink-0"></i>
                                 <div>
-                                    <p class="font-bold text-xs uppercase tracking-wider text-slate-400 font-prompt" data-translate="con-lbl-email">อีเมลกลาง</p>
+                                    <p class="font-bold text-[9px] uppercase tracking-wider text-slate-400 font-prompt" data-translate="con-lbl-email">อีเมลกลาง</p>
                                     <p class="mt-1">edu@npu.ac.th</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Social Icons -->
-                    <div class="mt-12">
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4" data-translate="con-lbl-social">ติดตามช่องทางโซเชียล</p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-npu-gold-500 hover:text-slate-950 flex items-center justify-center text-white transition shadow-sm"><i class="fa-brands fa-facebook-f text-base"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-npu-gold-500 hover:text-slate-950 flex items-center justify-center text-white transition shadow-sm"><i class="fa-brands fa-youtube text-base"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-npu-gold-500 hover:text-slate-950 flex items-center justify-center text-white transition shadow-sm"><i class="fa-brands fa-line text-base"></i></a>
+                    <div class="mt-8">
+                        <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-3.5" data-translate="con-lbl-social">ติดตามช่องทางโซเชียล</p>
+                        <div class="flex space-x-3.5">
+                            <a href="#" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-artistic-yellow hover:text-slate-950 flex items-center justify-center text-white transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                            <a href="#" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-artistic-yellow hover:text-slate-950 flex items-center justify-center text-white transition"><i class="fa-brands fa-youtube text-sm"></i></a>
+                            <a href="#" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-artistic-yellow hover:text-slate-950 flex items-center justify-center text-white transition"><i class="fa-brands fa-line text-sm"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Form Column (Lg: 4 Cols) -->
-                <div class="lg:col-span-4 glass-card rounded-3xl p-8 shadow-md border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                <div class="lg:col-span-4 bg-canvas-theme dark:bg-slate-900 rounded-3xl p-8 border border-slate-300/30 dark:border-slate-800 shadow-sm flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-bold text-slate-950 dark:text-white mb-6" data-translate="form-hdr">กล่องรับข้อความส่งด่วน</h3>
-                        
-                        <!-- Contact Form -->
+                        <h3 class="text-lg font-bold text-ink-theme dark:text-white mb-6" data-translate="form-hdr">กล่องรับข้อความส่งด่วน</h3>
                         <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4 font-prompt">
-                            <!-- Input Name -->
                             <div class="flex flex-col">
-                                <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mb-1" data-translate="form-name-lbl">ชื่อ-นามสกุล ของท่าน</label>
-                                <input type="text" id="form-name" required class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs md:text-sm focus:ring-2 focus:ring-npu-blue-500 focus:outline-none transition">
+                                <label class="text-[9px] font-bold text-slate-500 uppercase mb-1" data-translate="form-name-lbl">ชื่อ-นามสกุล ของท่าน</label>
+                                <input type="text" id="form-name" required class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300/40 dark:border-slate-700 rounded-xl text-xs focus:ring-1 focus:ring-artistic-emerald focus:outline-none transition">
                             </div>
-                            <!-- Input Email -->
                             <div class="flex flex-col">
-                                <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mb-1" data-translate="form-email-lbl">ที่อยู่อีเมลกลับ</label>
-                                <input type="email" id="form-email" required class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs md:text-sm focus:ring-2 focus:ring-npu-blue-500 focus:outline-none transition">
+                                <label class="text-[9px] font-bold text-slate-500 uppercase mb-1" data-translate="form-email-lbl">ที่อยู่อีเมลกลับ</label>
+                                <input type="email" id="form-email" required class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300/40 dark:border-slate-700 rounded-xl text-xs focus:ring-1 focus:ring-artistic-emerald focus:outline-none transition">
                             </div>
-                            <!-- Input Message -->
                             <div class="flex flex-col">
-                                <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mb-1" data-translate="form-msg-lbl">ข้อความติดต่อสอบถาม</label>
-                                <textarea id="form-msg" rows="3" required class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs md:text-sm focus:ring-2 focus:ring-npu-blue-500 focus:outline-none transition"></textarea>
+                                <label class="text-[9px] font-bold text-slate-500 uppercase mb-1" data-translate="form-msg-lbl">ข้อความติดต่อสอบถาม</label>
+                                <textarea id="form-msg" rows="3" required class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300/40 dark:border-slate-700 rounded-xl text-xs focus:ring-1 focus:ring-artistic-emerald focus:outline-none transition"></textarea>
                             </div>
-                            <!-- Submit Button -->
-                            <button type="submit" class="w-full py-3 bg-npu-terracotta-600 hover:bg-npu-terracotta-500 text-white font-bold text-xs rounded-xl shadow-md transition transform hover:-translate-y-0.5" data-translate="form-btn-submit">
+                            <button type="submit" class="w-full py-2.5 bg-artistic-terracotta hover:bg-artistic-terracottaHover text-white font-bold text-xs rounded-xl shadow-sm transition" data-translate="form-btn-submit">
                                 ส่งข้อความสอบถาม
                             </button>
                         </form>
                     </div>
                 </div>
 
-                <!-- Vector Map / Location Frame Column (Lg: 4 Cols) -->
-                <div class="lg:col-span-4 rounded-3xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 relative group flex flex-col">
-                    <!-- Google Maps Iframe pointing to Nakhon Phanom University, robust and premium -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d3790.697523910543!2d104.75735197597143!3d18.177024880157077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313c0762ea1c4103%3A0xe54d90956108151!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LiZ4LiE4Lij4Lie4LiZ4Lih!5e0!3m2!1sth!2sth!4v1716616010000!5m2!1sth!2sth" class="w-full h-full min-h-[320px] lg:min-h-0 border-0 flex-grow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <div class="p-4 bg-white dark:bg-slate-800 text-center font-prompt">
-                        <a href="https://maps.app.goo.gl/r6TDRW9JpLNuA9Yq7" target="_blank" class="text-xs font-bold text-npu-blue-900 dark:text-npu-gold-400 hover:text-npu-terracotta-600 flex items-center justify-center transition">
+                <!-- Google Maps (Lg: 4 Cols) -->
+                <div class="lg:col-span-4 rounded-3xl overflow-hidden border border-slate-300/30 dark:border-slate-800 flex flex-col">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d3790.697523910543!2d104.75735197597143!3d18.177024880157077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313c0762ea1c4103%3A0xe54d90956108151!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LiZ4LiE4Lij4Lie4LiZ4Lih!5e0!3m2!1sth!2sth!4v1716616010000!5m2!1sth!2sth" class="w-full h-full min-h-[260px] lg:min-h-0 border-0 flex-grow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="p-3.5 bg-white dark:bg-slate-800 text-center font-prompt">
+                        <a href="https://maps.app.goo.gl/r6TDRW9JpLNuA9Yq7" target="_blank" class="text-xs font-bold text-ink-theme dark:text-artistic-yellow hover:text-artistic-emerald flex items-center justify-center transition">
                             <span data-translate="btn-map-full">ดูแผนที่ขนาดใหญ่บน Google Maps</span>
                             <i class="fa-solid fa-square-arrow-up-right ml-2"></i>
                         </a>
@@ -691,92 +625,61 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-16 px-6 md:px-12 border-t border-slate-900 font-prompt transition-colors duration-300">
-        <div class="container mx-auto max-w-6xl">
-            <!-- Upper Footer -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <!-- Branding Column -->
-                <div class="flex flex-col space-y-4">
-                    <a href="#" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-npu-gold-500 to-npu-blue-800 flex items-center justify-center text-white font-bold text-base shadow-md">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-xs font-semibold tracking-wider text-npu-gold-400">NPU</span>
-                            <span class="text-sm font-bold text-white leading-tight">คณะครุศาสตร์</span>
-                        </div>
-                    </a>
-                    <p class="text-xs font-sarabun leading-relaxed text-slate-500" data-translate="foot-about">
-                        คณะครุศาสตร์ มหาวิทยาลัยนครพนม มุ่งเน้นกระบวนการผลิตครูที่มีทักษะศตวรรษที่ 21 มีความเชี่ยวชาญการใช้เทคโนโลยี สอดแทรกจิตวิญญาณความเป็นครูเพื่ออนาคตของชุมชนเชิงพื้นที่
-                    </p>
-                </div>
+    <!-- Footer Call-to-action & Info -->
+    <footer class="py-24 px-6 md:px-12 bg-canvas-theme text-slate-500 border-t border-slate-300/40 dark:border-slate-800 font-prompt transition-colors duration-300">
+        <div class="container mx-auto max-w-4xl text-center flex flex-col items-center">
+            <h3 class="text-3xl md:text-5xl font-black text-ink-theme dark:text-white leading-tight mb-8" data-translate="foot-cta">
+                Let's build a brighter educational future together.
+            </h3>
+            
+            <a href="#admission" class="text-lg md:text-xl font-bold text-artistic-terracotta hover:text-artistic-terracottaHover underline underline-offset-8 decoration-2 tracking-wide mb-16 transition" data-translate="foot-cta-link">
+                Start by applying online now
+            </a>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6" data-translate="foot-quick-hdr">ลิงก์เมนูด่วน</h4>
-                    <ul class="space-y-3 text-xs font-sarabun">
-                        <li><a href="#" class="hover:text-npu-gold-400 transition" data-translate="nav-home">หน้าแรก</a></li>
-                        <li><a href="#about" class="hover:text-npu-gold-400 transition" data-translate="nav-about">เกี่ยวกับคณะ</a></li>
-                        <li><a href="#curriculum" class="hover:text-npu-gold-400 transition" data-translate="nav-curriculum">หลักสูตรที่เปิดสอน</a></li>
-                        <li><a href="#admission" class="hover:text-npu-gold-400 transition" data-translate="nav-admission">ระบบรับสมัครนักศึกษา</a></li>
-                    </ul>
-                </div>
-
-                <!-- Affiliations -->
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6" data-translate="foot-aff-hdr">หน่วยงานภายนอก</h4>
-                    <ul class="space-y-3 text-xs font-sarabun">
-                        <li><a href="https://www.npu.ac.th" target="_blank" class="hover:text-npu-gold-400 transition" data-translate="link-npu">มหาวิทยาลัยนครพนม</a></li>
-                        <li><a href="https://www.ksp.or.th" target="_blank" class="hover:text-npu-gold-400 transition" data-translate="link-ksp">คุรุสภา (Teachers' Council)</a></li>
-                        <li><a href="https://www.mhesi.go.th" target="_blank" class="hover:text-npu-gold-400 transition" data-translate="link-mhesi">กระทรวง อว. (MHESI)</a></li>
-                        <li><a href="https://www.mytcas.com" target="_blank" class="hover:text-npu-gold-400 transition" data-translate="link-tcas">ระบบสมัครเรียน TCAS</a></li>
-                    </ul>
-                </div>
-
-                <!-- Legal / Credits -->
-                <div class="flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-6" data-translate="foot-credit-hdr">We Educate the Future</h4>
-                        <p class="text-xs font-sarabun leading-relaxed text-slate-500" data-translate="foot-credit-body">
-                            "ครูไม่ได้แค่สอนในวันนี้ แต่ร่วมกันสถาปนาสร้างรากฐานวันพรุ่งนี้ของชาติและอนุภูมิภาคลุ่มแม่น้ำโขง"
-                        </p>
-                    </div>
-                </div>
+            <!-- Navigation Links -->
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-xs font-bold mb-10 text-ink-theme dark:text-slate-400">
+                <a href="#" class="hover:text-artistic-emerald transition" data-translate="nav-home">SERVICES</a>
+                <a href="#about" class="hover:text-artistic-emerald transition" data-translate="nav-about">ABOUT</a>
+                <a href="#curriculum" class="hover:text-artistic-emerald transition" data-translate="nav-curriculum">CURRICULUMS</a>
+                <a href="#admission" class="hover:text-artistic-emerald transition" data-translate="nav-admission">ADMISSIONS</a>
+                <a href="#news" class="hover:text-artistic-emerald transition" data-translate="nav-news">NEWS</a>
+                <a href="#contact" class="hover:text-artistic-emerald transition" data-translate="nav-contact">CONTACT</a>
             </div>
 
-            <!-- Lower Divider -->
-            <div class="w-full h-px bg-slate-900 my-8"></div>
-
-            <!-- Lower Footer: Copyright -->
-            <div class="flex flex-col sm:flex-row items-center justify-between font-prompt text-[11px] text-slate-600">
-                <p id="footer-copy">&copy; 2026 คณะครุศาสตร์ มหาวิทยาลัยนครพนม. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <span class="hover:text-slate-400 cursor-pointer" data-translate="foot-policy">นโยบายความเป็นส่วนตัว</span>
-                    <span class="hover:text-slate-400 cursor-pointer" data-translate="foot-terms">ข้อตกลงและเงื่อนไข</span>
-                </div>
+            <!-- Affiliations Minimal -->
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold text-slate-400 uppercase mb-16 tracking-wider">
+                <a href="https://www.npu.ac.th" target="_blank" class="hover:text-ink-theme transition" data-translate="link-npu">Nakhon Phanom University</a>
+                <span>&bull;</span>
+                <a href="https://www.ksp.or.th" target="_blank" class="hover:text-ink-theme transition" data-translate="link-ksp">Kuru Sapa</a>
+                <span>&bull;</span>
+                <a href="https://www.mhesi.go.th" target="_blank" class="hover:text-ink-theme transition" data-translate="link-mhesi">MHESI</a>
+                <span>&bull;</span>
+                <a href="https://www.mytcas.com" target="_blank" class="hover:text-ink-theme transition" data-translate="link-tcas">MyTCAS</a>
             </div>
+
+            <div class="w-20 h-[1.5px] bg-slate-300/40 dark:border-slate-800 mb-8"></div>
+
+            <!-- Copyright and Sig -->
+            <a href="#" class="font-signature text-3xl font-bold text-ink-theme dark:text-artistic-yellow mb-4">EduNPU</a>
+            <p id="footer-copy" class="text-[10px] text-slate-400 font-medium">&copy; 2026 คณะครุศาสตร์ มหาวิทยาลัยนครพนม. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-npu-terracotta-600 hover:bg-npu-terracotta-500 text-white flex items-center justify-center shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 hover:scale-105" aria-label="Scroll Back to Top">
-        <i class="fa-solid fa-chevron-up text-lg"></i>
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-artistic-terracotta hover:bg-artistic-terracottaHover text-white flex items-center justify-center shadow-md transform translate-y-20 opacity-0 transition-all duration-300 z-50 hover:scale-105" aria-label="Scroll Back to Top">
+        <i class="fa-solid fa-chevron-up text-sm"></i>
     </button>
 
     <!-- Modal 1: Dean's Full Welcome Message Modal -->
     <div id="dean-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden overflow-y-auto">
-        <div class="glass-card w-full max-w-2xl rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-2xl relative max-h-[85vh] overflow-y-auto font-prompt transform scale-95 opacity-0 transition-all duration-300" id="dean-modal-content">
-            <!-- Close button -->
+        <div class="bg-canvas-theme w-full max-w-2xl rounded-3xl p-8 border border-slate-300/30 dark:border-slate-800 shadow-2xl relative max-h-[85vh] overflow-y-auto font-prompt transform scale-95 opacity-0 transition-all duration-300" id="dean-modal-content">
             <button onclick="closeDeanModal()" class="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
-                <i class="fa-solid fa-xmark text-xl"></i>
+                <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-
-            <span class="text-npu-blue-700 dark:text-npu-gold-400 font-bold uppercase text-xs md:text-sm tracking-wider block mb-2" data-translate="dean-modal-badge">สาส์นจากใจผู้บริหาร</span>
-            <h3 class="text-2xl font-bold text-slate-950 dark:text-white leading-tight mb-4" data-translate="dean-modal-title">สารจากคณบดี คณะครุศาสตร์ มหาวิทยาลัยนครพนม</h3>
-            <div class="h-0.5 bg-gradient-to-r from-npu-gold-500 to-npu-terracotta-500 w-24 mb-6 rounded-full"></div>
-
-            <div class="space-y-4 font-sarabun text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-h-[45vh] overflow-y-auto pr-2">
+            <span class="text-xs font-black uppercase tracking-widest text-artistic-emerald block mb-2" data-translate="dean-modal-badge">สาส์นจากใจผู้บริหาร</span>
+            <h3 class="text-2xl font-bold text-ink-theme dark:text-white leading-tight mb-4" data-translate="dean-modal-title">สารจากคณบดี คณะครุศาสตร์ มหาวิทยาลัยนครพนม</h3>
+            <div class="h-[1.5px] bg-artistic-yellow w-20 mb-6 rounded-full"></div>
+            <div class="space-y-4 font-sarabun text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-h-[42vh] overflow-y-auto pr-2">
                 <p data-translate="dean-modal-p1"><strong>เรียน นักศึกษา คณาจารย์ บุคลากร และผู้เข้าเยี่ยมชมทุกท่าน</strong></p>
                 <p data-translate="dean-modal-p2">ในนามของคณะครุศาสตร์ มหาวิทยาลัยนครพนม ผมมีความยินดีและภาคภูมิใจเป็นอย่างยิ่งที่ได้ต้อนรับทุกท่านเข้าสู่หน้าต่างประชาสัมพันธ์ของแหล่งผลิตวิชาชีพครูระดับแนวหน้าในพื้นที่อนุภูมิภาคลุ่มน้ำโขง</p>
                 <p data-translate="dean-modal-p3">คณะครุศาสตร์ของเราได้รับการสถาปนาขึ้นเพื่อเป็นหน่วยงานหลักในการยกระดับคุณภาพครูและพัฒนาวิชาชีพครูของประเทศ ภายใต้ปรัชญาการทำงานที่มุ่งสร้าง "ครูที่มีหัวใจแห่งความรู้คู่คุณธรรมและจรรยาบรรณวิชาชีพอย่างสมบูรณ์" เราเชื่อมั่นว่าการสร้างอนาคตต้องเริ่มต้นจากการวางรากฐานของครูผู้เรียนรู้ เพราะครูผู้มีคุณภาพเท่านั้นที่จะสร้างสรรค์สังคมแห่งปัญญาให้เกิดขึ้นได้อย่างแท้จริง</p>
@@ -787,9 +690,8 @@
                     <span class="text-slate-500 dark:text-slate-400">คณบดีคณะครุศาสตร์ มหาวิทยาลัยนครพนม</span>
                 </p>
             </div>
-            
             <div class="mt-8 flex justify-end">
-                <button onclick="closeDeanModal()" class="px-6 py-2.5 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs rounded-xl transition" data-translate="btn-close">
+                <button onclick="closeDeanModal()" class="px-6 py-2 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs rounded-xl transition" data-translate="btn-close">
                     ปิดหน้าต่าง
                 </button>
             </div>
@@ -798,49 +700,39 @@
 
     <!-- Modal 2: Program Details Modal -->
     <div id="prog-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden overflow-y-auto">
-        <div class="glass-card w-full max-w-2xl rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-2xl relative max-h-[85vh] overflow-y-auto font-prompt transform scale-95 opacity-0 transition-all duration-300" id="prog-modal-content">
-            <!-- Close button -->
+        <div class="bg-canvas-theme w-full max-w-2xl rounded-3xl p-8 border border-slate-300/30 dark:border-slate-800 shadow-2xl relative max-h-[85vh] overflow-y-auto font-prompt transform scale-95 opacity-0 transition-all duration-300" id="prog-modal-content">
             <button onclick="closeProgModal()" class="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
-                <i class="fa-solid fa-xmark text-xl"></i>
+                <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-
-            <span class="text-npu-blue-700 dark:text-npu-gold-400 font-bold uppercase text-xs md:text-sm tracking-wider block mb-2" id="pm-level">ปริญญาตรี (B.Ed.)</span>
-            <h3 class="text-2xl font-bold text-slate-950 dark:text-white leading-tight mb-4" id="pm-title">สาขาวิชาภาษาไทย</h3>
-            <div class="h-0.5 bg-gradient-to-r from-npu-gold-500 to-npu-terracotta-500 w-24 mb-6 rounded-full"></div>
-
-            <div class="space-y-6 font-sarabun text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-h-[50vh] overflow-y-auto pr-2">
-                <!-- Info Grid -->
-                <div class="grid grid-cols-2 gap-4 font-prompt bg-slate-100/50 dark:bg-slate-800/40 p-4 rounded-xl">
+            <span class="text-xs font-black uppercase tracking-widest text-artistic-emerald block mb-2" id="pm-level">ปริญญาตรี (B.Ed.)</span>
+            <h3 class="text-2xl font-bold text-ink-theme dark:text-white leading-tight mb-4" id="pm-title">สาขาวิชาภาษาไทย</h3>
+            <div class="h-[1.5px] bg-artistic-yellow w-20 mb-6 rounded-full"></div>
+            <div class="space-y-6 font-sarabun text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-h-[48vh] overflow-y-auto pr-2">
+                <div class="grid grid-cols-2 gap-4 font-prompt bg-card-theme dark:bg-slate-800/40 p-4 rounded-xl">
                     <div>
-                        <p class="text-[10px] font-bold text-slate-500 uppercase" data-translate="pm-dur-lbl">ระยะเวลาการศึกษา</p>
-                        <p class="text-sm font-bold text-slate-800 dark:text-white mt-0.5" id="pm-duration">4 ปี (8 ภาคการศึกษา)</p>
+                        <p class="text-[9px] font-bold text-slate-500 uppercase" data-translate="pm-dur-lbl">ระยะเวลาการศึกษา</p>
+                        <p class="text-xs font-bold text-ink-theme dark:text-white mt-0.5" id="pm-duration">4 ปี (8 ภาคการศึกษา)</p>
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold text-slate-500 uppercase" data-translate="pm-degree-lbl">วุฒิการศึกษาที่ได้รับ</p>
-                        <p class="text-sm font-bold text-slate-800 dark:text-white mt-0.5" id="pm-degree">ครุศาสตรบัณฑิต (ค.บ.)</p>
+                        <p class="text-[9px] font-bold text-slate-500 uppercase" data-translate="pm-degree-lbl">วุฒิการศึกษาที่ได้รับ</p>
+                        <p class="text-xs font-bold text-ink-theme dark:text-white mt-0.5" id="pm-degree">ครุศาสตรบัณฑิต (ค.บ.)</p>
                     </div>
                 </div>
-
-                <!-- Description -->
                 <div>
-                    <h4 class="font-bold text-slate-950 dark:text-white mb-2 font-prompt" data-translate="pm-overview-lbl">โครงสร้างและภาพรวมหลักสูตร</h4>
+                    <h4 class="font-bold text-ink-theme dark:text-white mb-1.5 font-prompt" data-translate="pm-overview-lbl">โครงสร้างและภาพรวมหลักสูตร</h4>
                     <p class="leading-relaxed text-xs md:text-sm" id="pm-body">รายละเอียดภาพรวมของสาขาวิชา เรียนรู้ลึกซึ้ง...</p>
                 </div>
-
-                <!-- Career Prospects -->
                 <div>
-                    <h4 class="font-bold text-slate-950 dark:text-white mb-2 font-prompt" data-translate="pm-career-lbl">แนวทางการประกอบอาชีพในอนาคต</h4>
+                    <h4 class="font-bold text-ink-theme dark:text-white mb-1.5 font-prompt" data-translate="pm-career-lbl">แนวทางการประกอบอาชีพในอนาคต</h4>
                     <ul class="list-disc pl-5 space-y-1 text-xs md:text-sm" id="pm-career">
-                        <!-- List items -->
                     </ul>
                 </div>
             </div>
-            
             <div class="mt-8 flex justify-between items-center font-prompt">
-                <a href="#admission" onclick="closeProgModal()" class="px-6 py-2.5 bg-gradient-to-r from-npu-gold-600 to-npu-gold-500 hover:from-npu-gold-500 hover:to-npu-gold-400 text-slate-950 font-bold text-xs rounded-xl shadow-md transition transform hover:-translate-y-0.5" data-translate="hero-btn-apply">
+                <a href="#admission" onclick="closeProgModal()" class="px-6 py-2.5 bg-artistic-terracotta hover:bg-artistic-terracottaHover text-white font-bold text-xs rounded-xl shadow-sm transition" data-translate="hero-btn-apply">
                     สมัครเรียนหลักสูตรนี้
                 </a>
-                <button onclick="closeProgModal()" class="px-6 py-2.5 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs rounded-xl transition" data-translate="btn-close">
+                <button onclick="closeProgModal()" class="px-6 py-2 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs rounded-xl transition" data-translate="btn-close">
                     ปิดหน้าต่าง
                 </button>
             </div>

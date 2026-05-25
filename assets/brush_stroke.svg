@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Beautiful organic artistic brush stroke background -->
+  <defs>
+    <linearGradient id="brushGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#167C67" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#2D9A83" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0B5646" stop-opacity="0.98" />
+    </linearGradient>
+    <filter id="turbulent" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+  
+  <g filter="url(#turbulent)">
+    <!-- Main thick brush splatters and organic shapes -->
+    <path d="M 40,250 C 90,200 120,280 200,220 C 260,170 290,260 380,210 C 440,170 420,240 470,220 C 480,240 440,270 410,280 C 340,300 320,260 250,310 C 180,360 140,290 80,340 C 40,380 20,300 40,250 Z" fill="url(#brushGrad)" />
+    <path d="M 90,160 C 150,130 180,180 240,150 C 290,120 330,190 400,160 C 420,180 390,210 360,210 C 300,210 280,170 220,200 C 160,230 120,180 80,200 Z" fill="#2D9A83" opacity="0.4" />
+    <path d="M 120,320 C 180,300 210,340 270,310 C 330,280 350,330 410,300 C 430,320 400,340 370,345 C 310,350 290,320 230,340 C 170,360 140,330 100,340 Z" fill="#0B5646" opacity="0.3" />
+    
+    <!-- Accent splats -->
+    <circle cx="70" cy="180" r="15" fill="url(#brushGrad)" />
+    <circle cx="430" cy="320" r="10" fill="url(#brushGrad)" />
+    <circle cx="210" cy="380" r="8" fill="#167C67" />
+    <circle cx="360" cy="120" r="12" fill="#2D9A83" opacity="0.8" />
+  </g>
+</svg>
